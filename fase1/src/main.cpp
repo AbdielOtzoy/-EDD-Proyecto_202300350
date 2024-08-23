@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include "./headers/auth.h"
 
 using namespace std;
 
@@ -21,9 +23,11 @@ int main()
         {
         case 1:
             cout << "Iniciar sesion" << endl;
+            loginUser();
             break;
         case 2:
             cout << "Registrarse" << endl;
+            registerUser();
             break;
         case 3:
             cout << "Informacion" << endl;
