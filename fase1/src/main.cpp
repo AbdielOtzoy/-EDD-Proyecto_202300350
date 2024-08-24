@@ -184,6 +184,7 @@ int main()
                         break;
                     case 2:
                         cout << "Crear publicacion" << endl;
+                        createPost();
                         break;
                     case 3:
                         cout << "Eliminar publicacion" << endl;

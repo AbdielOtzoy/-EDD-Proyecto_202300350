@@ -13,5 +13,6 @@ void registerUser();
 void logoutUser();
 void sendRequest();
 void respondRequest();
+void createPost();
 
 #endif

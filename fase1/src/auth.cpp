@@ -1,6 +1,11 @@
 #include <iostream>
 #include "./headers/auth.h"
 #include "../structures/linkedList/headers/list.h"
+#include "../structures/doublyList/headers/list.h"
+#include "../models/headers/User.h"
+#include "../models/headers/Request.h"
+#include "../models/headers/Post.h"
+#include <ctime>
 using namespace std;
 
 // Definición de las variables globales
@@ -8,7 +13,11 @@ bool isLogged = false;
 bool isAdmin = false;
 User loggedUser;
 
+// lista simple enlazada para almacenar los usuarios
 LinkedList list;
+
+// lista doblemente enlazada para almacenar todos los posts
+DoublyList posts;
 
 // Función para agregar usuarios de prueba
 void addTestUsers()
@@ -149,9 +158,37 @@ void respondRequest()
 
         // eliminar solicitud de la pila
         loggedUser.removeRequestReceived();
+
+        // actualizar solicitud en la lista del emisor
+        Node *sender = list.search(request.getEmisor());
+        sender->user.removeRequestSent(request);
     }
     else
     {
         cout << "No hay solicitudes pendientes" << endl;
     }
+}
+
+// implementacion de la funcion createPost
+void createPost()
+{
+    // pedir contenido de la publicacion
+    // tener en cuenta que el contenido puede ser una cadena con espacios
+    string content;
+    cout << "Contenido: ";
+    cin.ignore();
+    getline(cin, content);
+
+    // obtener la fecha y hora actual
+    time_t now = time(0);
+    tm *ltm = localtime(&now);
+    string date = to_string(1 + ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + "/" + to_string(1900 + ltm->tm_year);
+    string time = to_string(1 + ltm->tm_hour) + ":" + to_string(1 + ltm->tm_min) + ":" + to_string(1 + ltm->tm_sec);
+
+    Post post(loggedUser.getEmail(), content, date, time);
+    posts.addNode(post);
+    cout << "¡Publicacion creada!" << endl;
+
+    // mostrar la publicacion creada
+    posts.printList();
 }

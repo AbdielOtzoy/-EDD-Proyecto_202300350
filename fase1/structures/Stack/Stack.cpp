@@ -57,7 +57,9 @@ void Stack::printStack()
     NodeStack *current = this->top;
     while (current != NULL)
     {
-        cout << current->request.getEstado() << " -> " << current->request.getReceptor() << endl;
+        cout << "Emisor: " << current->request.getEmisor() << endl;
+        cout << "Receptor: " << current->request.getReceptor() << endl;
+        cout << "Estado: " << current->request.getEstado() << endl;
         current = current->next;
     }
 }
