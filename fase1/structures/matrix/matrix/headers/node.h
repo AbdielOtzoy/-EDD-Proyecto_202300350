@@ -1,14 +1,15 @@
-
+#include <string>
+using namespace std;
 class MatrixNode
 {
 private:
   /* data */
 public:
-  MatrixNode(int col, int row, int value);
+  MatrixNode(string row, string col, int value);
 
+  string row;
+  string col;
   int value;
-  int col;
-  int row;
   MatrixNode *up;
   MatrixNode *bottom;
   MatrixNode *right;

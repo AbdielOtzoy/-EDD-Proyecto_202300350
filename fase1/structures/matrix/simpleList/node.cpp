@@ -1,13 +1,15 @@
 #include "./headers/node.h"
 // Default constructor
-ListNode::ListNode(){
+ListNode::ListNode()
+{
   next = nullptr;
-  position = -1;
+  name = "";
   access = nullptr;
 }
 // Parameterised constructor
-ListNode::ListNode(int position){
-  this->position = position;
+ListNode::ListNode(string name)
+{
+  this->name = name;
   this->next = nullptr;
   this->access = nullptr;
 }

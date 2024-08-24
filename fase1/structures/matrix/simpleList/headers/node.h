@@ -2,15 +2,16 @@
 #include "../../matrix/headers/node.h"
 using namespace std;
 
-class ListNode{
-  private:
-    /* data */
-  public:
-    // CONSTRUCTORS 
-    ListNode();   // Default constructor
-    ListNode(int position);  //Parameterised Constructor
-    // VARIABLES
-    int position;
-    ListNode *next;
-    MatrixNode *access;
+class ListNode
+{
+private:
+  /* data */
+public:
+  // CONSTRUCTORS
+  ListNode();            // Default constructor
+  ListNode(string name); // Constructor with parameters
+  // VARIABLES
+  string name;
+  ListNode *next;
+  MatrixNode *access;
 };

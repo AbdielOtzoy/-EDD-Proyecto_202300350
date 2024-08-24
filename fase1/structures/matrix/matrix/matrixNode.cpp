@@ -1,11 +1,16 @@
 #include "./headers/node.h"
+#include <iostream>
+#include <string>
+using namespace std;
 
-MatrixNode::MatrixNode(int col, int row, int value){
-  this->col = col;
+// row es strng y col es string
+MatrixNode::MatrixNode(string row, string col, int value)
+{
   this->row = row;
+  this->col = col;
   this->value = value;
-  up = nullptr;
-  bottom = nullptr;
-  right = nullptr;
-  left = nullptr;
+  this->up = nullptr;
+  this->bottom = nullptr;
+  this->right = nullptr;
+  this->left = nullptr;
 }
