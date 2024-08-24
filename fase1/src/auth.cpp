@@ -95,3 +95,63 @@ void logoutUser()
     loggedUser = User();
     cout << "¡Sesion cerrada!" << endl;
 }
+
+// implementacion de la funcion sendRequest
+void sendRequest()
+{
+    string email;
+    cout << "Correo del destinatario: ";
+    cin >> email;
+
+    Node *receiver = list.search(email);
+    if (receiver != NULL)
+    {
+        Request request(loggedUser.getEmail(), receiver->user.getEmail(), "pending"); // Assuming the Request class has a constructor that accepts three arguments: sender email, receiver email, and status
+        receiver->user.addRequestReceived(request);
+        loggedUser.addRequestSent(request);
+        cout << "¡Solicitud enviada!" << endl;
+    }
+    else
+    {
+        cout << "Usuario no encontrado" << endl;
+    }
+}
+
+// implementacion de la funcion respondRequest
+void respondRequest()
+{
+    // mostrar solicitudes recibidas
+    loggedUser.printRequestsReceived();
+
+    // responder solicitud, como es una pila se responde la solicitud que esta en el tope
+    if (!loggedUser.requestsReceived.isEmpty())
+    {
+        Request request = loggedUser.requestsReceived.peek();
+        cout << "1. Aceptar" << endl;
+        cout << "2. Rechazar" << endl;
+        cout << "Opcion: ";
+        int opcion;
+        cin >> opcion;
+
+        switch (opcion)
+        {
+        case 1:
+            request.setEstado("accepted");
+            cout << "¡Solicitud aceptada!" << endl;
+            break;
+        case 2:
+            request.setEstado("rejected");
+            cout << "¡Solicitud rechazada!" << endl;
+            break;
+        default:
+            cout << "Opcion no valida" << endl;
+        }
+
+        // eliminar solicitud de la pila
+        loggedUser.removeRequestReceived();
+    }
+    else
+    {
+        cout << "No hay solicitudes pendientes" << endl;
+    }
+}

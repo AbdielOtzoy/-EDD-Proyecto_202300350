@@ -17,10 +17,10 @@ private:
     string birthDate;
     string email;
     string password;
-    List requestsSent;
-    Stack requestsReceived;
 
 public:
+    List requestsSent;
+    Stack requestsReceived;
     User();
     User(string name, string lastName, string birthDate, string email, string password);
     string getName();

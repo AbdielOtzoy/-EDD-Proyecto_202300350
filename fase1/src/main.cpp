@@ -107,6 +107,7 @@ int main()
                 cout << "Perfil" << endl;
                 // mostrar opciones: ver perfil, eliminar perfil o volver
                 int opcionPerfil;
+                opcionPerfil = 0;
                 while (opcionPerfil != 3)
                 {
                     cout << "1. Ver perfil" << endl;
@@ -134,6 +135,7 @@ int main()
             case 2:
                 cout << "Solicitudes" << endl;
                 int opcionSolicitudes;
+                opcionSolicitudes = 0;
                 // mostrar opciones: ver solicitudes, enviar solicitud o volver
                 while (opcionSolicitudes != 3)
                 {
@@ -147,9 +149,11 @@ int main()
                     {
                     case 1:
                         cout << "Ver solicitudes" << endl;
+                        respondRequest();
                         break;
                     case 2:
                         cout << "Enviar solicitud" << endl;
+                        sendRequest();
                         break;
                     case 3:
                         cout << "Volver" << endl;
@@ -162,6 +166,7 @@ int main()
             case 3:
                 cout << "Publicaciones" << endl;
                 int opcionPublicaciones;
+                opcionPublicaciones = 0;
                 // mostrar opciones: ver publicaciones, crear publicacion, eliminar o volver
                 while (opcionPublicaciones != 4)
                 {

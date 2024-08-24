@@ -11,5 +11,7 @@ void addTestUsers();
 void loginUser();
 void registerUser();
 void logoutUser();
+void sendRequest();
+void respondRequest();
 
 #endif
