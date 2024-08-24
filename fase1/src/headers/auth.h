@@ -7,6 +7,7 @@ extern bool isLogged;
 extern bool isAdmin;
 extern User loggedUser;
 
+void addTestUsers();
 void loginUser();
 void registerUser();
 void logoutUser();

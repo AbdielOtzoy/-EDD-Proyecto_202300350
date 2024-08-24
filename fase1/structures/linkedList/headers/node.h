@@ -1,4 +1,4 @@
-#ifndef NODE_H
+
 #define NODE_H
 
 #include "../../../models/headers/User.h"
@@ -14,5 +14,3 @@ public:
 
     void printNode();
 };
-
-#endif

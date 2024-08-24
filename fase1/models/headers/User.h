@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include "../../structures/List/headers/list.h"
+#include "../../structures/Stack/Stack.h"
+#include "../../models/headers/Request.h"
 
 using namespace std;
 
@@ -14,6 +17,8 @@ private:
     string birthDate;
     string email;
     string password;
+    List requestsSent;
+    Stack requestsReceived;
 
 public:
     User();
@@ -28,6 +33,13 @@ public:
     void setBirthDate(string birthDate);
     void setEmail(string email);
     void setPassword(string password);
+
+    void addRequestSent(Request request);
+    void addRequestReceived(Request request);
+    void printRequestsSent();
+    void printRequestsReceived();
+    void removeRequestSent(Request request);
+    void removeRequestReceived();
 
     void printUser();
 };

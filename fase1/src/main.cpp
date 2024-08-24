@@ -6,6 +6,7 @@ using namespace std;
 
 int main()
 {
+    addTestUsers();
     while (true)
     {
         // mostrar menu principal

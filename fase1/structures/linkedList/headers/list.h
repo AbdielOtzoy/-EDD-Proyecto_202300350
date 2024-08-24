@@ -4,10 +4,10 @@
 class LinkedList
 {
 private:
-    Node *head;
     int size;
 
 public:
+    Node *head;
     LinkedList();
     void insert(User user);
     void printList();

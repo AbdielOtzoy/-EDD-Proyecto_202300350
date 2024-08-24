@@ -85,3 +85,39 @@ void User::printUser()
     cout << "Correo: " << email << endl;
     cout << "Contrasena: " << password << endl;
 }
+
+// implementacion del metodo addRequestSent
+void User::addRequestSent(Request request)
+{
+    requestsSent.insert(request);
+}
+
+// implementacion del metodo addRequestReceived
+void User::addRequestReceived(Request request)
+{
+    requestsReceived.push(request);
+}
+
+// implementacion del metodo printRequestsSent
+void User::printRequestsSent()
+{
+    requestsSent.printList();
+}
+
+// implementacion del metodo printRequestsReceived
+void User::printRequestsReceived()
+{
+    requestsReceived.printStack();
+}
+
+// implementacion del metodo removeRequestSent
+void User::removeRequestSent(Request request)
+{
+    requestsSent.remove(request.getEmisor(), request.getReceptor());
+}
+
+// implementacion del metodo removeRequestReceived
+void User::removeRequestReceived()
+{
+    requestsReceived.pop();
+}

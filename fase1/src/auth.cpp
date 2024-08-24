@@ -1,6 +1,5 @@
 #include <iostream>
 #include "./headers/auth.h"
-#include "../models/headers/User.h"
 #include "../structures/linkedList/headers/list.h"
 using namespace std;
 
@@ -10,6 +9,21 @@ bool isAdmin = false;
 User loggedUser;
 
 LinkedList list;
+
+// Función para agregar usuarios de prueba
+void addTestUsers()
+{
+    // Crear usuarios de prueba
+    User user1("John", "Doe", "01-01-1990", "john", "123");
+    User user2("Jane", "Smith", "02-02-1992", "jane", "123");
+    User user3("Bob", "Johnson", "03-03-1995", "bob", "123");
+
+    // Insertar usuarios en la lista
+    list.insert(user1);
+    list.insert(user2);
+    list.insert(user3);
+}
+
 // implementacion de la funcion registerUser
 void registerUser()
 {
@@ -77,6 +91,7 @@ void loginUser()
 void logoutUser()
 {
     isLogged = false;
+    isAdmin = false;
     loggedUser = User();
     cout << "¡Sesion cerrada!" << endl;
 }
