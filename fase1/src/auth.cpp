@@ -5,6 +5,8 @@
 #include "../models/headers/User.h"
 #include "../models/headers/Request.h"
 #include "../models/headers/Post.h"
+#include "../structures/matrix/matrix/headers/matrix.h"
+#include "../structures/doublyCircleList/list.h"
 #include <ctime>
 using namespace std;
 
@@ -18,6 +20,12 @@ LinkedList list;
 
 // lista doblemente enlazada para almacenar todos los posts
 DoublyList posts;
+
+// matriz para almacenar las relaciones de amistad
+Matrix matrixRelation;
+
+// lista circular doblemente enlazada para almacenar temporalmente las publicaciones del usuario logeado y sus amigos
+DoublyCircleList availablePosts;
 
 // Función para agregar usuarios de prueba
 void addTestUsers()
@@ -102,6 +110,7 @@ void logoutUser()
     isLogged = false;
     isAdmin = false;
     loggedUser = User();
+    availablePosts.clear();
     cout << "¡Sesion cerrada!" << endl;
 }
 
@@ -142,11 +151,18 @@ void respondRequest()
         int opcion;
         cin >> opcion;
 
+        Node *sender = list.search(request.getEmisor());
         switch (opcion)
         {
         case 1:
             request.setEstado("accepted");
             cout << "¡Solicitud aceptada!" << endl;
+            // agregar a la matriz de relaciones
+            matrixRelation.insert(loggedUser.getEmail(), request.getEmisor(), 1);
+
+            // agregar a la lista de amigos de ambos usuarios
+            loggedUser.addFriend(sender->user.getEmail());
+            sender->user.addFriend(loggedUser.getEmail());
             break;
         case 2:
             request.setEstado("rejected");
@@ -160,7 +176,6 @@ void respondRequest()
         loggedUser.removeRequestReceived();
 
         // actualizar solicitud en la lista del emisor
-        Node *sender = list.search(request.getEmisor());
         sender->user.removeRequestSent(request);
     }
     else
@@ -191,4 +206,42 @@ void createPost()
 
     // mostrar la publicacion creada
     posts.printList();
+}
+
+// implementacion de la funcion viewProfile
+void viewProfile()
+{
+    // mostrar perfil del usuario logeado
+    loggedUser.printUser();
+}
+
+// implementacion de la funcion viewMyFriends
+void viewMyFriends()
+{
+    // mostrar lista de amigos del usuario logeado
+    loggedUser.printFriends();
+}
+
+// implementacion de la funcion viewAvailablePosts, se muestran todas las publicaciones de los amigos del usuario logeado y las publicaciones del usuario logeado
+void viewAvailablePosts()
+{
+    // agregar las publicaciones del usuario logeado a la lista de publicaciones disponibles
+    posts.filterByAuthor(loggedUser.getEmail(), availablePosts);
+
+    // agregar las publicaciones de los amigos del usuario logeado a la lista de publicaciones disponibles
+    for (int i = 0; i < loggedUser.friends.getSize(); i++)
+    {
+        string friendEmail = loggedUser.friends.get(i);
+        posts.filterByAuthor(friendEmail, availablePosts);
+    }
+
+    // mostrar publicaciones disponibles, si la lista esta vacia mostrar un mensaje
+    if (!availablePosts.isEmpty())
+    {
+        availablePosts.printList();
+    }
+    else
+    {
+        cout << "No hay publicaciones disponibles" << endl;
+    }
 }

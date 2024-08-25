@@ -1,5 +1,6 @@
 #include "./node.h"
 #include <iostream>
+#include "../../doublyCircleList/list.h"
 
 using namespace std;
 
@@ -14,4 +15,5 @@ public:
     void printList();
     void deleteNode(string author);
     void searchNode(string author);
+    void filterByAuthor(string author, DoublyCircleList &list);
 };

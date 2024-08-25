@@ -1,6 +1,8 @@
 #include <iostream>
+#include <string>
 #include "./headers/list.h"
 #include "../../models/headers/Post.h"
+#include "../doublyCircleList/list.h"
 
 using namespace std;
 
@@ -78,4 +80,18 @@ void DoublyList::searchNode(string author)
         current = current->next;
     }
     cout << "No se encontro el post" << endl;
+}
+
+// Filtrar posts por autor e insertarlos en una lista circular doblemente enlazada
+void DoublyList::filterByAuthor(string author, DoublyCircleList &list)
+{
+    NodeDoubly *current = this->head;
+    while (current != NULL)
+    {
+        if (current->post.getAuthor() == author)
+        {
+            list.insert(current->post);
+        }
+        current = current->next;
+    }
 }

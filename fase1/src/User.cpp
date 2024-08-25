@@ -121,3 +121,15 @@ void User::removeRequestReceived()
 {
     requestsReceived.pop();
 }
+
+// implementacion del metodo addFriend
+void User::addFriend(string name)
+{
+    friends.insert(name);
+}
+
+// implementacion del metodo printFriends
+void User::printFriends()
+{
+    friends.printFriendList();
+}

@@ -6,6 +6,7 @@
 #include "../../structures/List/headers/list.h"
 #include "../../structures/Stack/Stack.h"
 #include "../../models/headers/Request.h"
+#include "../../structures/friendList/list.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ private:
 public:
     List requestsSent;
     Stack requestsReceived;
+    FriendList friends;
     User();
     User(string name, string lastName, string birthDate, string email, string password);
     string getName();
@@ -40,6 +42,9 @@ public:
     void printRequestsReceived();
     void removeRequestSent(Request request);
     void removeRequestReceived();
+
+    void addFriend(string name);
+    void printFriends();
 
     void printUser();
 };

@@ -14,5 +14,8 @@ void logoutUser();
 void sendRequest();
 void respondRequest();
 void createPost();
+void viewProfile();
+void viewMyFriends();
+void viewAvailablePosts();
 
 #endif

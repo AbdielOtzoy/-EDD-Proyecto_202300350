@@ -120,6 +120,7 @@ int main()
                     {
                     case 1:
                         cout << "Ver perfil" << endl;
+                        viewProfile();
                         break;
                     case 2:
                         cout << "Eliminar perfil" << endl;
@@ -168,12 +169,11 @@ int main()
                 int opcionPublicaciones;
                 opcionPublicaciones = 0;
                 // mostrar opciones: ver publicaciones, crear publicacion, eliminar o volver
-                while (opcionPublicaciones != 4)
+                while (opcionPublicaciones != 3)
                 {
                     cout << "1. Ver publicaciones" << endl;
                     cout << "2. Crear publicacion" << endl;
-                    cout << "3. Eliminar publicacion" << endl;
-                    cout << "4. Volver" << endl;
+                    cout << "3. Volver" << endl;
                     cout << "Opcion: ";
                     cin >> opcionPublicaciones;
 
@@ -181,15 +181,13 @@ int main()
                     {
                     case 1:
                         cout << "Ver publicaciones" << endl;
+                        viewAvailablePosts();
                         break;
                     case 2:
                         cout << "Crear publicacion" << endl;
                         createPost();
                         break;
                     case 3:
-                        cout << "Eliminar publicacion" << endl;
-                        break;
-                    case 4:
                         cout << "Volver" << endl;
                         break;
                     default:
@@ -199,6 +197,41 @@ int main()
                 break;
             case 4:
                 cout << "Reportes" << endl;
+                int opcionReportes;
+                opcionReportes = 0;
+                // mostrar opciones: Solicitudes enviadas y recibidas, relaciones de amistad, publicaciones, mis amigos
+                while (opcionReportes != 5)
+                {
+                    cout << "1. Solicitudes enviadas y recibidas" << endl;
+                    cout << "2. Relaciones de amistad" << endl;
+                    cout << "3. Publicaciones" << endl;
+                    cout << "4. Mis amigos" << endl;
+                    cout << "5. Volver" << endl;
+                    cout << "Opcion: ";
+                    cin >> opcionReportes;
+
+                    switch (opcionReportes)
+                    {
+                    case 1:
+                        cout << "Solicitudes enviadas y recibidas" << endl;
+                        break;
+                    case 2:
+                        cout << "Relaciones de amistad" << endl;
+                        break;
+                    case 3:
+                        cout << "Publicaciones" << endl;
+                        break;
+                    case 4:
+                        cout << "Mis amigos" << endl;
+                        viewMyFriends();
+                        break;
+                    case 5:
+                        cout << "Volver" << endl;
+                        break;
+                    default:
+                        cout << "Opcion no valida" << endl;
+                    }
+                }
                 break;
             case 5:
                 cout << "Cerrar sesion" << endl;
