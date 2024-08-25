@@ -21,8 +21,12 @@ DoubleNode::DoubleNode(Post post)
 
 void DoubleNode::printNode()
 {
+    cout << endl;
+    cout << "Autor: " << post.getAuthor() << endl;
     cout << "Contenido: " << post.getContent() << endl;
     cout << "Fecha: " << post.getDate() << endl;
+    cout << "Hora: " << post.getTime() << endl;
+    cout << endl;
 }
 
 DoublyCircleList::DoublyCircleList()
@@ -55,12 +59,36 @@ void DoublyCircleList::insert(Post post)
 
 void DoublyCircleList::printList()
 {
+    // imprimir la lista de publicaciones, tener opciones de anterior y siguiente
+    if (this->head == nullptr)
+    {
+        cout << "No hay publicaciones disponibles" << endl;
+        return;
+    }
     DoubleNode *current = this->head;
     do
     {
         current->printNode();
-        current = current->next;
-    } while (current != this->head);
+        cout << "1. Anterior" << endl;
+        cout << "2. Siguiente" << endl;
+        cout << "3. Volver" << endl;
+        cout << "Opcion: ";
+        int opcion;
+        cin >> opcion;
+        switch (opcion)
+        {
+        case 1:
+            current = current->prev;
+            break;
+        case 2:
+            current = current->next;
+            break;
+        case 3:
+            return;
+        default:
+            cout << "Opcion no valida" << endl;
+        }
+    } while (true);
 }
 
 DoublyCircleList::~DoublyCircleList()

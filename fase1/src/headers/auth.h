@@ -7,7 +7,7 @@ extern bool isLogged;
 extern bool isAdmin;
 extern User loggedUser;
 
-void addTestUsers();
+void addTestData();
 void loginUser();
 void registerUser();
 void logoutUser();
@@ -17,5 +17,6 @@ void createPost();
 void viewProfile();
 void viewMyFriends();
 void viewAvailablePosts();
+void deleteAccount();
 
 #endif

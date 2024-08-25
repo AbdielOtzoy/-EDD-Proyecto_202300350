@@ -28,17 +28,37 @@ Matrix matrixRelation;
 DoublyCircleList availablePosts;
 
 // Función para agregar usuarios de prueba
-void addTestUsers()
+void addTestData()
 {
     // Crear usuarios de prueba
     User user1("John", "Doe", "01-01-1990", "john", "123");
     User user2("Jane", "Smith", "02-02-1992", "jane", "123");
     User user3("Bob", "Johnson", "03-03-1995", "bob", "123");
+    User user4("Alice", "Williams", "04-04-1998", "alice", "123");
+    User user5("Eve", "Brown", "05-05-2000", "eve", "123");
+
+    // Crear solicitudes de amistad
+    Request request1("john", "jane", "pending");
+    Request request2("john", "bob", "pending");
+    Request request3("bob", "jane", "pending");
+    Request request4("alice", "jane", "pending");
+
+    // Agregar solicitudes a los usuarios
+    user1.addRequestSent(request1);
+    user1.addRequestSent(request2);
+    user2.addRequestReceived(request1);
+    user3.addRequestReceived(request2);
+    user3.addRequestSent(request3);
+    user2.addRequestReceived(request3);
+    user4.addRequestSent(request4);
+    user2.addRequestReceived(request4);
 
     // Insertar usuarios en la lista
     list.insert(user1);
     list.insert(user2);
     list.insert(user3);
+    list.insert(user4);
+    list.insert(user5);
 }
 
 // implementacion de la funcion registerUser
@@ -124,7 +144,7 @@ void sendRequest()
     Node *receiver = list.search(email);
     if (receiver != NULL)
     {
-        Request request(loggedUser.getEmail(), receiver->user.getEmail(), "pending"); // Assuming the Request class has a constructor that accepts three arguments: sender email, receiver email, and status
+        Request request(loggedUser.getEmail(), receiver->user.getEmail(), "pending");
         receiver->user.addRequestReceived(request);
         loggedUser.addRequestSent(request);
         cout << "¡Solicitud enviada!" << endl;
@@ -138,12 +158,11 @@ void sendRequest()
 // implementacion de la funcion respondRequest
 void respondRequest()
 {
-    // mostrar solicitudes recibidas
-    loggedUser.printRequestsReceived();
-
     // responder solicitud, como es una pila se responde la solicitud que esta en el tope
     if (!loggedUser.requestsReceived.isEmpty())
     {
+        // mostrar solicitudes recibidas
+        loggedUser.printRequestsReceived();
         Request request = loggedUser.requestsReceived.peek();
         cout << "1. Aceptar" << endl;
         cout << "2. Rechazar" << endl;
@@ -244,4 +263,15 @@ void viewAvailablePosts()
     {
         cout << "No hay publicaciones disponibles" << endl;
     }
+}
+
+// implementacion de la funcion deleteAccount
+void deleteAccount()
+{
+    // eliminar usuario de la lista
+    list.remove(loggedUser.getEmail());
+    isLogged = false;
+    isAdmin = false;
+    loggedUser = User();
+    cout << "¡Cuenta eliminada!" << endl;
 }

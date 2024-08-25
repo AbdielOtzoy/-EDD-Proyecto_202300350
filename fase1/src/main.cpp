@@ -6,9 +6,10 @@ using namespace std;
 
 int main()
 {
-    addTestUsers();
+    addTestData();
     while (true)
     {
+        cout << endl;
         // mostrar menu principal
         if (isLogged == false)
         {
@@ -124,6 +125,8 @@ int main()
                         break;
                     case 2:
                         cout << "Eliminar perfil" << endl;
+                        deleteAccount();
+                        opcionPerfil = 3;
                         break;
                     case 3:
                         cout << "Volver" << endl;

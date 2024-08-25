@@ -107,7 +107,8 @@ void User::printRequestsSent()
 // implementacion del metodo printRequestsReceived
 void User::printRequestsReceived()
 {
-    requestsReceived.printStack();
+    // mostrar solamente la solicitud que esta en el tope
+    requestsReceived.peek().printRequest();
 }
 
 // implementacion del metodo removeRequestSent
