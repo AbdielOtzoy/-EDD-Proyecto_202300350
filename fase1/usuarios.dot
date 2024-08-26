@@ -1,9 +1,4 @@
 digraph G {
-John [label="John"];
-Jane [label="Jane"];
-Bob [label="Bob"];
-Alice [label="Alice"];
-Eve [label="Eve"];
 Carlos [label="Carlos"];
 Maria [label="Maria"];
 Juan [label="Juan"];
@@ -14,11 +9,6 @@ Jose [label="Jose"];
 Elena [label="Elena"];
 Miguel [label="Miguel"];
 Sofia [label="Sofia"];
-John -> Jane;
-Jane -> Bob;
-Bob -> Alice;
-Alice -> Eve;
-Eve -> Carlos;
 Carlos -> Maria;
 Maria -> Juan;
 Juan -> Ana;

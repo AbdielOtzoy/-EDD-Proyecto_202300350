@@ -127,30 +127,28 @@ void LinkedList::createDotFile()
 void LinkedList::topFiveUsersWithLeastFriends()
 {
     Node *current = this->head;
-    int sizeFriends = 0;
-    int topFive[5] = {0, 0, 0, 0, 0};
-    string topFiveUsers[5] = {"", "", "", "", ""};
+    User *users[this->size];
+    int i = 0;
     while (current != NULL)
     {
-        sizeFriends = current->user.getSizeFriends();
-        for (int i = 0; i < 5; i++)
+        users[i] = &current->user;
+        current = current->next;
+        i++;
+    }
+    for (int i = 0; i < this->size; i++)
+    {
+        for (int j = i + 1; j < this->size; j++)
         {
-            if (sizeFriends < topFive[i])
+            if (users[i]->getSizeFriends() > users[j]->getSizeFriends())
             {
-                for (int j = 4; j > i; j--)
-                {
-                    topFive[j] = topFive[j - 1];
-                    topFiveUsers[j] = topFiveUsers[j - 1];
-                }
-                topFive[i] = sizeFriends;
-                topFiveUsers[i] = current->user.getName();
-                break;
+                User *temp = users[i];
+                users[i] = users[j];
+                users[j] = temp;
             }
         }
-        current = current->next;
     }
     for (int i = 0; i < 5; i++)
     {
-        cout << "Usuario: " << topFiveUsers[i] << " - Cantidad de amigos: " << topFive[i] << endl;
+        cout << "Usuario: " << users[i]->getName() << " Amigos: " << users[i]->getSizeFriends() << endl;
     }
 }

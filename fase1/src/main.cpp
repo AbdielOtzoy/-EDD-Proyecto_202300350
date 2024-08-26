@@ -6,7 +6,6 @@ using namespace std;
 
 int main()
 {
-    addTestData();
     while (true)
     {
         cout << endl;
@@ -36,6 +35,13 @@ int main()
                 break;
             case 3:
                 cout << "Informacion" << endl;
+                cout << "Proyecto de Estructuras de Datos 2" << endl;
+                cout << "Seccion B+" << endl;
+                cout << "2024" << endl;
+                cout << "Hecho por:" << endl;
+                cout << "Abdiel Fernando José Otzoy Otzín" << endl;
+                cout << "Carné: 202300350" << endl;
+                cout << endl;
                 break;
             case 4:
                 cout << "Salir" << endl;

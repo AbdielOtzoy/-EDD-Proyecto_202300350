@@ -31,40 +31,6 @@ Matrix matrixRelation;
 // lista circular doblemente enlazada para almacenar temporalmente las publicaciones del usuario logeado y sus amigos
 DoublyCircleList availablePosts;
 
-// Función para agregar usuarios de prueba
-void addTestData()
-{
-    // Crear usuarios de prueba
-    User user1("John", "Doe", "01-01-1990", "john", "123");
-    User user2("Jane", "Smith", "02-02-1992", "jane", "123");
-    User user3("Bob", "Johnson", "03-03-1995", "bob", "123");
-    User user4("Alice", "Williams", "04-04-1998", "alice", "123");
-    User user5("Eve", "Brown", "05-05-2000", "eve", "123");
-
-    // Crear solicitudes de amistad
-    Request request1("john", "jane", "PENDIENTE");
-    Request request2("john", "bob", "PENDIENTE");
-    Request request3("bob", "jane", "PENDIENTE");
-    Request request4("alice", "jane", "PENDIENTE");
-
-    // Agregar solicitudes a los usuarios
-    user1.addRequestSent(request1);
-    user1.addRequestSent(request2);
-    user2.addRequestReceived(request1);
-    user3.addRequestReceived(request2);
-    user3.addRequestSent(request3);
-    user2.addRequestReceived(request3);
-    user4.addRequestSent(request4);
-    user2.addRequestReceived(request4);
-
-    // Insertar usuarios en la lista
-    list.insert(user1);
-    list.insert(user2);
-    list.insert(user3);
-    list.insert(user4);
-    list.insert(user5);
-}
-
 // implementacion de la funcion registerUser
 void registerUser()
 {
@@ -120,7 +86,7 @@ void loginUser()
     cout << "Contrasena: ";
     cin >> password;
 
-    if (email == "admin" && password == "admin")
+    if (email == "admin@gmail.com" && password == "EDD2S2024")
     {
         cout << "¡Bienvenido administrador!" << endl;
         isLogged = true;
@@ -313,6 +279,8 @@ void deleteAccount()
 // implementacion de la funcion loadUsers
 void loadUsers()
 {
+    // pedir el path del archivo de usuario
+
     std::ifstream file("src/usuarios.json");
     if (!file.is_open())
     {
@@ -334,12 +302,16 @@ void loadUsers()
         // Crear usuarios de prueba
         User user(usuario["nombres"], usuario["apellidos"], usuario["fecha_de_nacimiento"], usuario["correo"], usuario["contraseña"]);
         list.insert(user);
+
+        // mostrar por consola los usuarios cargados
+        user.printUser();
     }
 }
 
 // implementacion de la funcion loadRequests
 void loadRequests()
 {
+
     std::ifstream file("src/solicitudes.json");
     if (!file.is_open())
     {
@@ -396,6 +368,7 @@ void loadRequests()
 // implementacion de la funcion loadPosts
 void loadPosts()
 {
+
     std::ifstream file("src/publicaciones.json");
     if (!file.is_open())
     {
