@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "./headers/list.h"
 #include "../../models/headers/Request.h"
 
@@ -73,4 +74,42 @@ void List::remove(string emisor, string receptor)
 int List::getSize()
 {
     return this->size;
+}
+
+// implementacion de la funcion createDotFile
+void List::createDotFile()
+{
+    ofstream file;
+    file.open("solicitudes_enviadas.dot");
+    if (file.is_open())
+    {
+        file << "digraph G {" << endl;
+        NodeList *current = this->head;
+        // el emisor y receptor tienen caracteres especiales que deben ser escapados
+        while (current != NULL)
+        {
+            file << "\"" << current->request.getEmisor() << " " << current->request.getReceptor() << "\" [label=\"" << current->request.getEstado() << "\"];" << endl;
+            current = current->next;
+        }
+        current = this->head;
+        while (current != NULL)
+        {
+            if (current->next != NULL)
+            {
+                file << "\"" << current->request.getEmisor() << " " << current->request.getReceptor() << "\" -> \"" << current->next->request.getEmisor() << " " << current->next->request.getReceptor() << "\";" << endl;
+            }
+            current = current->next;
+        }
+        file << "}";
+        file.close();
+    }
+    else
+    {
+        cout << "No se pudo abrir el archivo" << endl;
+    }
+}
+
+bool List::isEmpty()
+{
+    return this->head == NULL;
 }

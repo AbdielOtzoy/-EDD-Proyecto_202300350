@@ -30,6 +30,7 @@ public:
     void printList();
     void clear();
     bool isEmpty();
+    void createDotFile();
 
     ~DoublyCircleList();
 };

@@ -1,0 +1,15 @@
+digraph G {
+"lhernandez@hotmail.com jperez@gmail.com" [label="PENDIENTE"];
+"etorres@gmail.com jperez@gmail.com" [label="PENDIENTE"];
+"jfernandez@hotmail.com jperez@gmail.com" [label="PENDIENTE"];
+"amartinez@gmail.com jperez@gmail.com" [label="PENDIENTE"];
+"mvargas@gmail.com jperez@gmail.com" [label="PENDIENTE"];
+"lramirez@yahoo.com jperez@gmail.com" [label="PENDIENTE"];
+"psanchez@gmail.com jperez@gmail.com" [label="PENDIENTE"];
+"lhernandez@hotmail.com jperez@gmail.com" -> "etorres@gmail.com jperez@gmail.com";
+"etorres@gmail.com jperez@gmail.com" -> "jfernandez@hotmail.com jperez@gmail.com";
+"jfernandez@hotmail.com jperez@gmail.com" -> "amartinez@gmail.com jperez@gmail.com";
+"amartinez@gmail.com jperez@gmail.com" -> "mvargas@gmail.com jperez@gmail.com";
+"mvargas@gmail.com jperez@gmail.com" -> "lramirez@yahoo.com jperez@gmail.com";
+"lramirez@yahoo.com jperez@gmail.com" -> "psanchez@gmail.com jperez@gmail.com";
+}

@@ -80,6 +80,49 @@ int main()
                 break;
             case 5:
                 cout << "Reportes" << endl;
+                int opcionReportesAdmin;
+                opcionReportesAdmin = 0;
+                // mostrar opciones: usuarios, relaciones de amistad, publicaciones, top 5 usuarios con mas publicaciones, top 5 usuarios con menos amigos
+                while (opcionReportesAdmin != 6)
+                {
+                    cout << "1. Usuarios" << endl;
+                    cout << "2. Relaciones de amistad" << endl;
+                    cout << "3. Publicaciones" << endl;
+                    cout << "4. Top 5 usuarios con mas publicaciones" << endl;
+                    cout << "5. Top 5 usuarios con menos amigos" << endl;
+                    cout << "6. Volver" << endl;
+                    cout << "Opcion: ";
+                    cin >> opcionReportesAdmin;
+
+                    switch (opcionReportesAdmin)
+                    {
+                    case 1:
+                        cout << "Usuarios" << endl;
+                        viewUsers();
+                        break;
+                    case 2:
+                        cout << "Relaciones de amistad" << endl;
+                        viewMatrix();
+                        break;
+                    case 3:
+                        cout << "Publicaciones" << endl;
+                        viewPosts();
+                        break;
+                    case 4:
+                        cout << "Top 5 usuarios con mas publicaciones" << endl;
+                        viewTopFiveUsersWithMostPosts();
+                        break;
+                    case 5:
+                        cout << "Top 5 usuarios con menos amigos" << endl;
+                        viewTopFiveUsersWithLeastFriends();
+                        break;
+                    case 6:
+                        cout << "Volver" << endl;
+                        break;
+                    default:
+                        cout << "Opcion no valida" << endl;
+                    }
+                }
                 break;
             case 6:
                 cout << "Cerrar sesion" << endl;
@@ -220,12 +263,16 @@ int main()
                     {
                     case 1:
                         cout << "Solicitudes enviadas y recibidas" << endl;
+                        viewSentRequests();
+                        viewReceivedRequests();
                         break;
                     case 2:
                         cout << "Relaciones de amistad" << endl;
+                        viewMatrix();
                         break;
                     case 3:
                         cout << "Publicaciones" << endl;
+                        viewAvailablePostsDotFile();
                         break;
                     case 4:
                         cout << "Mis amigos" << endl;

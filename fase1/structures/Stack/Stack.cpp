@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "../../models/headers/Request.h"
 #include "./Stack.h"
 
@@ -61,5 +62,40 @@ void Stack::printStack()
         cout << "Receptor: " << current->request.getReceptor() << endl;
         cout << "Estado: " << current->request.getEstado() << endl;
         current = current->next;
+    }
+}
+
+// implementacion de la funcion createDotFile
+void Stack::createDotFile()
+{
+    ofstream file;
+    file.open("solicitudes_recibidas.dot");
+    if (file.is_open())
+    {
+        file << "digraph G {" << endl;
+        NodeStack *current = this->top;
+        // el emisor y receptor tienen caracteres especiales que deben ser escapados
+        while (current != NULL)
+        {
+            file << "\"" << current->request.getEmisor() << " " << current->request.getReceptor() << "\" [label=\"" << current->request.getEstado() << "\"];" << endl;
+            current = current->next;
+        }
+        current = this->top;
+
+        while (current != NULL)
+        {
+            if (current->next != NULL)
+            {
+                file << "\"" << current->request.getEmisor() << " " << current->request.getReceptor() << "\" -> \"" << current->next->request.getEmisor() << " " << current->next->request.getReceptor() << "\";" << endl;
+            }
+            current = current->next;
+        }
+
+        file << "}";
+        file.close();
+    }
+    else
+    {
+        cout << "No se pudo abrir el archivo" << endl;
     }
 }

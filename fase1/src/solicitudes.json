@@ -1,52 +1,99 @@
 [
-    {
-        "emisor": "jperez@gmail.com",
-        "receptor": "mgomez@hotmail.com",
-        "estado": "ACEPTADA"
-    },
-    {
-        "emisor": "clopez@yahoo.com",
-        "receptor": "amartinez@gmail.com",
-        "estado": "ACEPTADA"
-    },
-    {
-        "emisor": "psanchez@gmail.com",
-        "receptor": "lramirez@yahoo.com",
-        "estado": "PENDIENTE"
-    },
-    {
-        "emisor": "jfernandez@hotmail.com",
-        "receptor": "etorres@gmail.com",
-        "estado": "ACEPTADA"
-    },
-    {
-        "emisor": "mvargas@gmail.com",
-        "receptor": "lhernandez@hotmail.com",
-        "estado": "PENDIENTE"
-    },
-    {
-        "emisor": "amartinez@gmail.com",
-        "receptor": "jperez@gmail.com",
-        "estado": "ACEPTADA"
-    },
-    {
-        "emisor": "mgomez@hotmail.com",
-        "receptor": "psanchez@gmail.com",
-        "estado": "PENDIENTE"
-    },
-    {
-        "emisor": "etorres@gmail.com",
-        "receptor": "clopez@yahoo.com",
-        "estado": "ACEPTADA"
-    },
-    {
-        "emisor": "lhernandez@hotmail.com",
-        "receptor": "jfernandez@hotmail.com",
-        "estado": "PENDIENTE"
-    },
-    {
-        "emisor": "lramirez@yahoo.com",
-        "receptor": "mvargas@gmail.com",
-        "estado": "ACEPTADA"
-    }
+    {"emisor": "jperez@gmail.com", "receptor": "mgomez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "jperez@gmail.com", "receptor": "clopez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "jperez@gmail.com", "receptor": "psanchez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "jperez@gmail.com", "receptor": "lramirez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "jperez@gmail.com", "receptor": "mvargas@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "jperez@gmail.com", "receptor": "amartinez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "jperez@gmail.com", "receptor": "jfernandez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "jperez@gmail.com", "receptor": "etorres@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "jperez@gmail.com", "receptor": "lhernandez@hotmail.com", "estado": "PENDIENTE"},
+
+    {"emisor": "mgomez@hotmail.com", "receptor": "clopez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "mgomez@hotmail.com", "receptor": "psanchez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "mgomez@hotmail.com", "receptor": "lramirez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "mgomez@hotmail.com", "receptor": "mvargas@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "mgomez@hotmail.com", "receptor": "amartinez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "mgomez@hotmail.com", "receptor": "jfernandez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "mgomez@hotmail.com", "receptor": "etorres@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "mgomez@hotmail.com", "receptor": "lhernandez@hotmail.com", "estado": "PENDIENTE"},
+
+    {"emisor": "clopez@yahoo.com", "receptor": "psanchez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "clopez@yahoo.com", "receptor": "lramirez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "clopez@yahoo.com", "receptor": "mvargas@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "clopez@yahoo.com", "receptor": "amartinez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "clopez@yahoo.com", "receptor": "jfernandez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "clopez@yahoo.com", "receptor": "etorres@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "clopez@yahoo.com", "receptor": "lhernandez@hotmail.com", "estado": "PENDIENTE"},
+
+    {"emisor": "psanchez@gmail.com", "receptor": "jperez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "psanchez@gmail.com", "receptor": "mgomez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "psanchez@gmail.com", "receptor": "clopez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "psanchez@gmail.com", "receptor": "lramirez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "psanchez@gmail.com", "receptor": "mvargas@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "psanchez@gmail.com", "receptor": "amartinez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "psanchez@gmail.com", "receptor": "jfernandez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "psanchez@gmail.com", "receptor": "etorres@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "psanchez@gmail.com", "receptor": "lhernandez@hotmail.com", "estado": "PENDIENTE"},
+
+    {"emisor": "lramirez@yahoo.com", "receptor": "jperez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "lramirez@yahoo.com", "receptor": "mgomez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "lramirez@yahoo.com", "receptor": "clopez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "lramirez@yahoo.com", "receptor": "psanchez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "lramirez@yahoo.com", "receptor": "mvargas@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "lramirez@yahoo.com", "receptor": "amartinez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "lramirez@yahoo.com", "receptor": "jfernandez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "lramirez@yahoo.com", "receptor": "etorres@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "lramirez@yahoo.com", "receptor": "lhernandez@hotmail.com", "estado": "PENDIENTE"},
+
+    {"emisor": "mvargas@gmail.com", "receptor": "jperez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "mvargas@gmail.com", "receptor": "mgomez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "mvargas@gmail.com", "receptor": "clopez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "mvargas@gmail.com", "receptor": "psanchez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "mvargas@gmail.com", "receptor": "lramirez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "mvargas@gmail.com", "receptor": "amartinez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "mvargas@gmail.com", "receptor": "jfernandez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "mvargas@gmail.com", "receptor": "etorres@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "mvargas@gmail.com", "receptor": "lhernandez@hotmail.com", "estado": "PENDIENTE"},
+
+    {"emisor": "amartinez@gmail.com", "receptor": "jperez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "amartinez@gmail.com", "receptor": "mgomez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "amartinez@gmail.com", "receptor": "clopez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "amartinez@gmail.com", "receptor": "psanchez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "amartinez@gmail.com", "receptor": "lramirez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "amartinez@gmail.com", "receptor": "mvargas@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "amartinez@gmail.com", "receptor": "jfernandez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "amartinez@gmail.com", "receptor": "etorres@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "amartinez@gmail.com", "receptor": "lhernandez@hotmail.com", "estado": "PENDIENTE"},
+
+    {"emisor": "jfernandez@hotmail.com", "receptor": "jperez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "jfernandez@hotmail.com", "receptor": "mgomez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "jfernandez@hotmail.com", "receptor": "clopez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "jfernandez@hotmail.com", "receptor": "psanchez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "jfernandez@hotmail.com", "receptor": "lramirez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "jfernandez@hotmail.com", "receptor": "mvargas@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "jfernandez@hotmail.com", "receptor": "amartinez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "jfernandez@hotmail.com", "receptor": "etorres@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "jfernandez@hotmail.com", "receptor": "lhernandez@hotmail.com", "estado": "PENDIENTE"},
+
+    {"emisor": "etorres@gmail.com", "receptor": "jperez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "etorres@gmail.com", "receptor": "mgomez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "etorres@gmail.com", "receptor": "clopez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "etorres@gmail.com", "receptor": "psanchez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "etorres@gmail.com", "receptor": "lramirez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "etorres@gmail.com", "receptor": "mvargas@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "etorres@gmail.com", "receptor": "amartinez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "etorres@gmail.com", "receptor": "jfernandez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "etorres@gmail.com", "receptor": "lhernandez@hotmail.com", "estado": "PENDIENTE"},
+
+    {"emisor": "lhernandez@hotmail.com", "receptor": "jperez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "lhernandez@hotmail.com", "receptor": "mgomez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "lhernandez@hotmail.com", "receptor": "clopez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "lhernandez@hotmail.com", "receptor": "psanchez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "lhernandez@hotmail.com", "receptor": "lramirez@yahoo.com", "estado": "PENDIENTE"},
+    {"emisor": "lhernandez@hotmail.com", "receptor": "mvargas@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "lhernandez@hotmail.com", "receptor": "amartinez@gmail.com", "estado": "PENDIENTE"},
+    {"emisor": "lhernandez@hotmail.com", "receptor": "jfernandez@hotmail.com", "estado": "PENDIENTE"},
+    {"emisor": "lhernandez@hotmail.com", "receptor": "etorres@gmail.com", "estado": "PENDIENTE"}
 ]
+

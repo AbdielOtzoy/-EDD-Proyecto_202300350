@@ -23,6 +23,7 @@ public:
     Request peek();
     bool isEmpty();
     void printStack();
+    void createDotFile();
 };
 
 #endif

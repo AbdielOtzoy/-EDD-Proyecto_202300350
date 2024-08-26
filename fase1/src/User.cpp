@@ -134,3 +134,9 @@ void User::printFriends()
 {
     friends.printFriendList();
 }
+
+// implementacion del metodo getSizeFriends
+void User::getSizeFriends()
+{
+    friends.getSize();
+}

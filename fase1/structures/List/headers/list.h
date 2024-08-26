@@ -18,6 +18,8 @@ public:
     void remove(std::string emisor, std::string receptor);
     int getSize();
     NodeList *search(std::string email);
+    void createDotFile();
+    bool isEmpty();
 };
 
 #endif

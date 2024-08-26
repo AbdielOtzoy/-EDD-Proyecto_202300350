@@ -23,4 +23,16 @@ void loadUsers();
 void loadRequests();
 void loadPosts();
 
+// reportes para admin
+void viewUsers();
+void viewMatrix();
+void viewPosts();
+void viewTopFiveUsersWithMostPosts();
+void viewTopFiveUsersWithLeastFriends();
+
+// reportes para usuario
+void viewSentRequests();
+void viewReceivedRequests();
+void viewAvailablePostsDotFile();
+
 #endif

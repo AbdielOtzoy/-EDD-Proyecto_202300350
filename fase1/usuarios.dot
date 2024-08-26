@@ -1,0 +1,31 @@
+digraph G {
+John [label="John"];
+Jane [label="Jane"];
+Bob [label="Bob"];
+Alice [label="Alice"];
+Eve [label="Eve"];
+Juan [label="Juan"];
+Maria [label="Maria"];
+Carlos [label="Carlos"];
+Ana [label="Ana"];
+Pedro [label="Pedro"];
+Lucia [label="Lucia"];
+Jose [label="Jose"];
+Elena [label="Elena"];
+Miguel [label="Miguel"];
+Laura [label="Laura"];
+John -> Jane;
+Jane -> Bob;
+Bob -> Alice;
+Alice -> Eve;
+Eve -> Juan;
+Juan -> Maria;
+Maria -> Carlos;
+Carlos -> Ana;
+Ana -> Pedro;
+Pedro -> Lucia;
+Lucia -> Jose;
+Jose -> Elena;
+Elena -> Miguel;
+Miguel -> Laura;
+}

@@ -14,4 +14,6 @@ public:
     void remove(string email);
     Node *search(string email);
     int getSize();
+    void createDotFile();
+    void topFiveUsersWithLeastFriends();
 };

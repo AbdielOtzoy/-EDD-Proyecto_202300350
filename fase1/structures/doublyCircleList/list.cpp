@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "./list.h"
 #include "../../models/headers/Post.h"
 
@@ -119,4 +120,36 @@ void DoublyCircleList::clear()
 bool DoublyCircleList::isEmpty()
 {
     return this->head == nullptr;
+}
+
+// implementacion de la funcion createDotFile
+void DoublyCircleList::createDotFile()
+{
+    ofstream file;
+    file.open("posts.dot");
+    if (file.is_open())
+    {
+        file << "digraph G {" << endl;
+        DoubleNode *current = this->head;
+        // el autor tiene caracteres especiales que deben ser escapados al igual que la fecha y hora
+        while (current->next != this->head)
+        {
+            file << "\"" << current->post.getAuthor() << " " << current->post.getDate() << " " << current->post.getTime() << "\" [label=\"" << current->post.getContent() << "\"];" << endl;
+            current = current->next;
+        }
+        file << "\"" << current->post.getAuthor() << " " << current->post.getDate() << " " << current->post.getTime() << "\" [label=\"" << current->post.getContent() << "\"];" << endl;
+        current = this->head;
+        while (current->next != this->head)
+        {
+            file << "\"" << current->post.getAuthor() << " " << current->post.getDate() << " " << current->post.getTime() << "\" -> \"" << current->next->post.getAuthor() << " " << current->next->post.getDate() << " " << current->next->post.getTime() << "\";" << endl;
+            current = current->next;
+        }
+        file << "\"" << current->post.getAuthor() << " " << current->post.getDate() << " " << current->post.getTime() << "\" -> \"" << current->next->post.getAuthor() << " " << current->next->post.getDate() << " " << current->next->post.getTime() << "\";" << endl;
+        file << "}";
+        file.close();
+    }
+    else
+    {
+        cout << "No se pudo abrir el archivo" << endl;
+    }
 }

@@ -44,6 +44,7 @@ public:
     void removeRequestReceived();
 
     void addFriend(string name);
+    void getSizeFriends();
     void printFriends();
 
     void printUser();

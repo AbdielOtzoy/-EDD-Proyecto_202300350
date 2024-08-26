@@ -16,4 +16,6 @@ public:
     void deleteNode(string author);
     void searchNode(string author);
     void filterByAuthor(string author, DoublyCircleList &list);
+    void createDotFile();
+    void topFiveUsersWithMostPosts();
 };

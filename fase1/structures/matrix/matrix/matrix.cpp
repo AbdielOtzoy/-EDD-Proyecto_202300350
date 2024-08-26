@@ -280,7 +280,7 @@ void Matrix::align_col_nodes(stringstream &createNodes, stringstream &align, str
 }
 void Matrix::write_dot(const string &code)
 {
-  ofstream file("graph.dot");
+  ofstream file("graph_matrix.dot");
   if (file.is_open())
   {
     file << code;

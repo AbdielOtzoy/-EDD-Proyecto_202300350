@@ -192,7 +192,7 @@ void respondRequest()
             request.setEstado("accepted");
             cout << "¡Solicitud aceptada!" << endl;
             // agregar a la matriz de relaciones
-            matrixRelation.insert(loggedUser.getEmail(), request.getEmisor(), 1);
+            matrixRelation.insert(loggedUser.getName(), sender->user.getName(), 1);
 
             // agregar a la lista de amigos de ambos usuarios
             loggedUser.addFriend(sender->user.getEmail());
@@ -353,20 +353,21 @@ void loadRequests()
 
         if (estado == "PENDIENTE")
         {
-            Request request(emisor, receptor, estado);
             Node *receiver = list.search(receptor);
-            receiver->user.addRequestReceived(request);
             Node *sender = list.search(emisor);
+            Request request(emisor, receptor, estado);
+            receiver->user.addRequestReceived(request);
             sender->user.addRequestSent(request);
         }
         else if (estado == "ACEPTADA")
         {
-            // agregar a la matriz de relaciones
-            matrixRelation.insert(emisor, receptor, 1);
 
             // agregar a la lista de amigos de ambos usuarios
             Node *user1 = list.search(emisor);
             Node *user2 = list.search(receptor);
+
+            // agregar a la matriz de relaciones, los nombres de los usuarios
+            matrixRelation.insert(user1->user.getName(), user2->user.getName(), 1);
             user1->user.addFriend(receptor);
             user2->user.addFriend(emisor);
         }
@@ -400,5 +401,82 @@ void loadPosts()
 
         // mostrar por consola las publicaciones cargadas
         post.printPost();
+    }
+}
+
+// implementacion de la funcion viewUsers
+void viewUsers()
+{
+    // generar archivo .dot con la lista de usuarios
+    list.createDotFile();
+}
+
+// implementacion de la funcion viewMatrix
+void viewMatrix()
+{
+    // generar archivo .dot con la matriz de relaciones
+    matrixRelation.create_dot();
+}
+
+// implementacion de la funcion viewPosts
+void viewPosts()
+{
+    // generar archivo .dot con la lista de publicaciones
+    posts.createDotFile();
+}
+
+// implementacion de la funcion viewTopFiveUsersWithMostPosts
+void viewTopFiveUsersWithMostPosts()
+{
+    // obtener los 5 usuarios con mas publicaciones
+    posts.topFiveUsersWithMostPosts();
+}
+
+// implementacion de la funcion viewTopFiveUsersWithLeastFriends
+void viewTopFiveUsersWithLeastFriends()
+{
+    // obtener los 5 usuarios con menos amigos
+    list.topFiveUsersWithLeastFriends();
+}
+
+// implementacion de la funcion viewSentRequests
+void viewSentRequests()
+{
+    // mostrar solicitudes enviadas
+    if (!loggedUser.requestsSent.isEmpty())
+    {
+        loggedUser.requestsSent.createDotFile();
+    }
+    else
+    {
+        cout << "No hay solicitudes enviadas" << endl;
+    }
+}
+
+// implementacion de la funcion viewReceivedRequests
+void viewReceivedRequests()
+{
+    // mostrar solicitudes recibidas
+    if (!loggedUser.requestsReceived.isEmpty())
+    {
+        loggedUser.requestsReceived.createDotFile();
+    }
+    else
+    {
+        cout << "No hay solicitudes pendientes" << endl;
+    }
+}
+
+// implementacion de la funcion viewAvailablePostsDotFile
+void viewAvailablePostsDotFile()
+{
+    // generar archivo .dot con las publicaciones disponibles
+    if (!availablePosts.isEmpty())
+    {
+        availablePosts.createDotFile();
+    }
+    else
+    {
+        cout << "No hay publicaciones disponibles" << endl;
     }
 }

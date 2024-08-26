@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "./headers/list.h"
 #include "../../models/headers/User.h"
 
@@ -87,4 +88,41 @@ Node *LinkedList::search(string email)
 int LinkedList::getSize()
 {
     return this->size;
+}
+
+// implementacion de la funcion createDotFile
+void LinkedList::createDotFile()
+{
+    ofstream file;
+    file.open("usuarios.dot");
+    if (file.is_open())
+    {
+        file << "digraph G {" << endl;
+        Node *current = this->head;
+        while (current != NULL)
+        {
+            file << current->user.getName() << " [label=\"" << current->user.getName() << "\"];" << endl;
+            current = current->next;
+        }
+        current = this->head;
+        while (current != NULL)
+        {
+            if (current->next != NULL)
+            {
+                file << current->user.getName() << " -> " << current->next->user.getName() << ";" << endl;
+            }
+            current = current->next;
+        }
+        file << "}";
+        file.close();
+    }
+    else
+    {
+        cout << "Error al abrir el archivo" << endl;
+    }
+}
+
+void LinkedList::topFiveUsersWithLeastFriends()
+{
+    cout << "Top 5 usuarios con menos amigos :c" << endl;
 }
