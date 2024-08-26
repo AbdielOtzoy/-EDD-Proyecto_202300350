@@ -84,23 +84,31 @@ void List::createDotFile()
     if (file.is_open())
     {
         file << "digraph G {" << endl;
+        file << "  rankdir=LR;" << endl; // Para dibujar de izquierda a derecha, en lugar de arriba a abajo
+        file << "  node [shape=box, style=filled, color=lightblue];" << endl;
+
         NodeList *current = this->head;
-        // el emisor y receptor tienen caracteres especiales que deben ser escapados
+        int nodeId = 0;
+        // Primero creamos los nodos
         while (current != NULL)
         {
-            file << "\"" << current->request.getEmisor() << " " << current->request.getReceptor() << "\" [label=\"" << current->request.getEstado() << "\"];" << endl;
+            file << "  node" << nodeId << " [label=\"Emisor: " << current->request.getEmisor()
+                 << "\\nReceptor: " << current->request.getReceptor()
+                 << "\\nEstado: " << current->request.getEstado() << "\"];" << endl;
             current = current->next;
+            nodeId++;
         }
+
+        // Luego creamos las conexiones entre los nodos
         current = this->head;
-        while (current != NULL)
+        nodeId = 0;
+        while (current != NULL && current->next != NULL)
         {
-            if (current->next != NULL)
-            {
-                file << "\"" << current->request.getEmisor() << " " << current->request.getReceptor() << "\" -> \"" << current->next->request.getEmisor() << " " << current->next->request.getReceptor() << "\";" << endl;
-            }
+            file << "  node" << nodeId << " -> node" << (nodeId + 1) << ";" << endl;
             current = current->next;
+            nodeId++;
         }
-        file << "}";
+        file << "}" << endl;
         file.close();
     }
     else

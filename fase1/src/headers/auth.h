@@ -10,6 +10,7 @@ extern User loggedUser;
 void addTestData();
 void loginUser();
 void registerUser();
+void deleteUser();
 void logoutUser();
 void logoutAdmin();
 void sendRequest();

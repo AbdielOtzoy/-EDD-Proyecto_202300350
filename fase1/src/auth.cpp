@@ -92,6 +92,25 @@ void registerUser()
     loggedUser = user;
 }
 
+// implementacion de la funcion deleteUser
+void deleteUser()
+{
+    // si es administrador, eliminar usuario por correo
+    if (isAdmin)
+    {
+        string email;
+        cout << "Correo del usuario a eliminar: ";
+        cin >> email;
+        list.remove(email);
+        cout << "¡Usuario eliminado!" << endl;
+    }
+    else
+    {
+        // si es usuario, eliminar cuenta
+        deleteAccount();
+    }
+}
+
 // implementacion de la funcion loginUser
 void loginUser()
 {
@@ -470,7 +489,6 @@ void viewReceivedRequests()
 // implementacion de la funcion viewAvailablePostsDotFile
 void viewAvailablePostsDotFile()
 {
-    // generar archivo .dot con las publicaciones disponibles
     if (!availablePosts.isEmpty())
     {
         availablePosts.createDotFile();

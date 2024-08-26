@@ -122,34 +122,51 @@ bool DoublyCircleList::isEmpty()
     return this->head == nullptr;
 }
 
-// implementacion de la funcion createDotFile
 void DoublyCircleList::createDotFile()
 {
     ofstream file;
-    file.open("posts.dot");
+    file.open("availablePosts.dot");
+
     if (file.is_open())
     {
         file << "digraph G {" << endl;
+        file << "  rankdir=LR;" << endl;                                         // Dirección de izquierda a derecha
+        file << "  node [shape=record, style=filled, color=lightblue];" << endl; // Estilo de los nodos
+
         DoubleNode *current = this->head;
-        // el autor tiene caracteres especiales que deben ser escapados al igual que la fecha y hora
-        while (current->next != this->head)
+        int nodeId = 0;
+
+        // Crear nodos con identificadores únicos
+        do
         {
-            file << "\"" << current->post.getAuthor() << " " << current->post.getDate() << " " << current->post.getTime() << "\" [label=\"" << current->post.getContent() << "\"];" << endl;
+            file << "  node" << nodeId << " [label=\"{"
+                 << "Autor: " << current->post.getAuthor() << "|"
+                 << "Fecha: " << current->post.getDate() << "|"
+                 << "Hora: " << current->post.getTime() << "|"
+                 << current->post.getContent() << "}\"];" << endl;
             current = current->next;
-        }
-        file << "\"" << current->post.getAuthor() << " " << current->post.getDate() << " " << current->post.getTime() << "\" [label=\"" << current->post.getContent() << "\"];" << endl;
+            nodeId++;
+        } while (current != this->head);
+
+        // Crear conexiones bidireccionales para representar la lista doblemente enlazada
         current = this->head;
-        while (current->next != this->head)
+        nodeId = 0;
+        do
         {
-            file << "\"" << current->post.getAuthor() << " " << current->post.getDate() << " " << current->post.getTime() << "\" -> \"" << current->next->post.getAuthor() << " " << current->next->post.getDate() << " " << current->next->post.getTime() << "\";" << endl;
+            file << "  node" << nodeId << " -> node" << nodeId + 1 << ";" << endl;
+            file << "  node" << nodeId + 1 << " -> node" << nodeId << ";" << endl;
             current = current->next;
-        }
-        file << "\"" << current->post.getAuthor() << " " << current->post.getDate() << " " << current->post.getTime() << "\" -> \"" << current->next->post.getAuthor() << " " << current->next->post.getDate() << " " << current->next->post.getTime() << "\";" << endl;
+            nodeId++;
+        } while (current != this->head);
+
+        // enlazar el último nodo con el primero
+        file << "  node" << nodeId << " -> node0;" << endl;
+
         file << "}";
         file.close();
     }
     else
     {
-        cout << "No se pudo abrir el archivo" << endl;
+        cout << "Error al abrir el archivo" << endl;
     }
 }

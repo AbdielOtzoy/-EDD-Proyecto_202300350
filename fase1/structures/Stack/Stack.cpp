@@ -65,7 +65,6 @@ void Stack::printStack()
     }
 }
 
-// implementacion de la funcion createDotFile
 void Stack::createDotFile()
 {
     ofstream file;
@@ -73,25 +72,34 @@ void Stack::createDotFile()
     if (file.is_open())
     {
         file << "digraph G {" << endl;
+        file << "  rankdir=TB;" << endl;                                          // Dirección de arriba hacia abajo
+        file << "  node [shape=record, style=filled, color=lightcoral];" << endl; // Estilo de los nodos
+
         NodeStack *current = this->top;
-        // el emisor y receptor tienen caracteres especiales que deben ser escapados
+        int nodeId = 0;
+
+        // Crear nodos con identificadores únicos
         while (current != NULL)
         {
-            file << "\"" << current->request.getEmisor() << " " << current->request.getReceptor() << "\" [label=\"" << current->request.getEstado() << "\"];" << endl;
+            file << "  node" << nodeId << " [label=\"{"
+                 << "Emisor: " << current->request.getEmisor() << "|"
+                 << "Receptor: " << current->request.getReceptor() << "|"
+                 << "Estado: " << current->request.getEstado() << "}\"];" << endl;
             current = current->next;
+            nodeId++;
         }
+
+        // Crear conexiones entre nodos para representar la pila
         current = this->top;
-
-        while (current != NULL)
+        nodeId = 0;
+        while (current != NULL && current->next != NULL)
         {
-            if (current->next != NULL)
-            {
-                file << "\"" << current->request.getEmisor() << " " << current->request.getReceptor() << "\" -> \"" << current->next->request.getEmisor() << " " << current->next->request.getReceptor() << "\";" << endl;
-            }
+            file << "  node" << nodeId << " -> node" << (nodeId + 1) << " [dir=back];" << endl; // Usar dir=back para mostrar dirección de la pila
             current = current->next;
+            nodeId++;
         }
 
-        file << "}";
+        file << "}" << endl;
         file.close();
     }
     else

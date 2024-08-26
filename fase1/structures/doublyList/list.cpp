@@ -97,7 +97,6 @@ void DoublyList::filterByAuthor(string author, DoublyCircleList &list)
     }
 }
 
-// implementacion de la funcion createDotFile
 void DoublyList::createDotFile()
 {
     ofstream file;
@@ -105,23 +104,35 @@ void DoublyList::createDotFile()
     if (file.is_open())
     {
         file << "digraph G {" << endl;
+        file << "  rankdir=LR;" << endl;                                         // Dirección de izquierda a derecha
+        file << "  node [shape=record, style=filled, color=lightblue];" << endl; // Estilo de los nodos
+
         NodeDoubly *current = this->head;
-        // el autor tiene caracteres especiales que deben ser escapados al igual que la fecha y hora
+        int nodeId = 0;
+
+        // Crear nodos con identificadores únicos
         while (current != NULL)
         {
-            file << "\"" << current->post.getAuthor() << " " << current->post.getDate() << " " << current->post.getTime() << "\" [label=\"" << current->post.getContent() << "\"];" << endl;
+            file << "  node" << nodeId << " [label=\"{"
+                 << "Autor: " << current->post.getAuthor() << "|"
+                 << "Fecha: " << current->post.getDate() << "|"
+                 << "Hora: " << current->post.getTime() << "|"
+                 << current->post.getContent() << "}\"];" << endl;
             current = current->next;
+            nodeId++;
         }
+
+        // Crear conexiones bidireccionales para representar la lista doblemente enlazada
         current = this->head;
-        while (current != NULL)
+        nodeId = 0;
+        while (current != NULL && current->next != NULL)
         {
-            if (current->next != NULL)
-            {
-                file << "\"" << current->post.getAuthor() << " " << current->post.getDate() << " " << current->post.getTime() << "\" -> \"" << current->next->post.getAuthor() << " " << current->next->post.getDate() << " " << current->next->post.getTime() << "\";" << endl;
-            }
+            file << "  node" << nodeId << " -> node" << (nodeId + 1) << " [dir=both];" << endl; // Conexión en ambas direcciones
             current = current->next;
+            nodeId++;
         }
-        file << "}";
+
+        file << "}" << endl;
         file.close();
     }
     else

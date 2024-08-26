@@ -1,19 +1,5 @@
 digraph G {
-"jperez@gmail.com mgomez@hotmail.com" [label="PENDIENTE"];
-"jperez@gmail.com clopez@yahoo.com" [label="PENDIENTE"];
-"jperez@gmail.com psanchez@gmail.com" [label="PENDIENTE"];
-"jperez@gmail.com lramirez@yahoo.com" [label="PENDIENTE"];
-"jperez@gmail.com mvargas@gmail.com" [label="PENDIENTE"];
-"jperez@gmail.com amartinez@gmail.com" [label="PENDIENTE"];
-"jperez@gmail.com jfernandez@hotmail.com" [label="PENDIENTE"];
-"jperez@gmail.com etorres@gmail.com" [label="PENDIENTE"];
-"jperez@gmail.com lhernandez@hotmail.com" [label="PENDIENTE"];
-"jperez@gmail.com mgomez@hotmail.com" -> "jperez@gmail.com clopez@yahoo.com";
-"jperez@gmail.com clopez@yahoo.com" -> "jperez@gmail.com psanchez@gmail.com";
-"jperez@gmail.com psanchez@gmail.com" -> "jperez@gmail.com lramirez@yahoo.com";
-"jperez@gmail.com lramirez@yahoo.com" -> "jperez@gmail.com mvargas@gmail.com";
-"jperez@gmail.com mvargas@gmail.com" -> "jperez@gmail.com amartinez@gmail.com";
-"jperez@gmail.com amartinez@gmail.com" -> "jperez@gmail.com jfernandez@hotmail.com";
-"jperez@gmail.com jfernandez@hotmail.com" -> "jperez@gmail.com etorres@gmail.com";
-"jperez@gmail.com etorres@gmail.com" -> "jperez@gmail.com lhernandez@hotmail.com";
+  rankdir=LR;
+  node [shape=box, style=filled, color=lightblue];
+  node0 [label="Emisor: maria.lopez@example.com\nReceptor: carlos.gomez@example.com\nEstado: PENDIENTE"];
 }

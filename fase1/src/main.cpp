@@ -77,6 +77,7 @@ int main()
                 break;
             case 4:
                 cout << "Gestionar usuarios" << endl;
+                deleteUser();
                 break;
             case 5:
                 cout << "Reportes" << endl;

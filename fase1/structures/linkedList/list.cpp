@@ -122,7 +122,35 @@ void LinkedList::createDotFile()
     }
 }
 
+// implementacion de la funcion topFiveUsersWithLeastFriends, muestra los 5 usuarios con menos amigos
+// utiliza la función getSizeFriends de User para obtener la cantidad de amigos de cada usuario
 void LinkedList::topFiveUsersWithLeastFriends()
 {
-    cout << "Top 5 usuarios con menos amigos :c" << endl;
+    Node *current = this->head;
+    int sizeFriends = 0;
+    int topFive[5] = {0, 0, 0, 0, 0};
+    string topFiveUsers[5] = {"", "", "", "", ""};
+    while (current != NULL)
+    {
+        sizeFriends = current->user.getSizeFriends();
+        for (int i = 0; i < 5; i++)
+        {
+            if (sizeFriends < topFive[i])
+            {
+                for (int j = 4; j > i; j--)
+                {
+                    topFive[j] = topFive[j - 1];
+                    topFiveUsers[j] = topFiveUsers[j - 1];
+                }
+                topFive[i] = sizeFriends;
+                topFiveUsers[i] = current->user.getName();
+                break;
+            }
+        }
+        current = current->next;
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "Usuario: " << topFiveUsers[i] << " - Cantidad de amigos: " << topFive[i] << endl;
+    }
 }
