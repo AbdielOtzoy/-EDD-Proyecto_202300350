@@ -1,0 +1,52 @@
+[
+    {
+        "emisor": "jperez@gmail.com",
+        "receptor": "mgomez@hotmail.com",
+        "estado": "ACEPTADA"
+    },
+    {
+        "emisor": "clopez@yahoo.com",
+        "receptor": "amartinez@gmail.com",
+        "estado": "ACEPTADA"
+    },
+    {
+        "emisor": "psanchez@gmail.com",
+        "receptor": "lramirez@yahoo.com",
+        "estado": "PENDIENTE"
+    },
+    {
+        "emisor": "jfernandez@hotmail.com",
+        "receptor": "etorres@gmail.com",
+        "estado": "ACEPTADA"
+    },
+    {
+        "emisor": "mvargas@gmail.com",
+        "receptor": "lhernandez@hotmail.com",
+        "estado": "PENDIENTE"
+    },
+    {
+        "emisor": "amartinez@gmail.com",
+        "receptor": "jperez@gmail.com",
+        "estado": "ACEPTADA"
+    },
+    {
+        "emisor": "mgomez@hotmail.com",
+        "receptor": "psanchez@gmail.com",
+        "estado": "PENDIENTE"
+    },
+    {
+        "emisor": "etorres@gmail.com",
+        "receptor": "clopez@yahoo.com",
+        "estado": "ACEPTADA"
+    },
+    {
+        "emisor": "lhernandez@hotmail.com",
+        "receptor": "jfernandez@hotmail.com",
+        "estado": "PENDIENTE"
+    },
+    {
+        "emisor": "lramirez@yahoo.com",
+        "receptor": "mvargas@gmail.com",
+        "estado": "ACEPTADA"
+    }
+]

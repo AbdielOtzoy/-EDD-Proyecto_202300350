@@ -7,6 +7,8 @@
 #include "../models/headers/Post.h"
 #include "../structures/matrix/matrix/headers/matrix.h"
 #include "../structures/doublyCircleList/list.h"
+#include "nlohmann/json.hpp"
+#include <fstream>
 #include <ctime>
 using namespace std;
 
@@ -14,6 +16,8 @@ using namespace std;
 bool isLogged = false;
 bool isAdmin = false;
 User loggedUser;
+
+using json = nlohmann::json;
 
 // lista simple enlazada para almacenar los usuarios
 LinkedList list;
@@ -38,10 +42,10 @@ void addTestData()
     User user5("Eve", "Brown", "05-05-2000", "eve", "123");
 
     // Crear solicitudes de amistad
-    Request request1("john", "jane", "pending");
-    Request request2("john", "bob", "pending");
-    Request request3("bob", "jane", "pending");
-    Request request4("alice", "jane", "pending");
+    Request request1("john", "jane", "PENDIENTE");
+    Request request2("john", "bob", "PENDIENTE");
+    Request request3("bob", "jane", "PENDIENTE");
+    Request request4("alice", "jane", "PENDIENTE");
 
     // Agregar solicitudes a los usuarios
     user1.addRequestSent(request1);
@@ -128,9 +132,20 @@ void loginUser()
 void logoutUser()
 {
     isLogged = false;
-    isAdmin = false;
     loggedUser = User();
-    availablePosts.clear();
+    // eliminar publicaciones disponibles, si las hay
+    if (!availablePosts.isEmpty())
+    {
+        availablePosts.clear();
+    }
+    cout << "¡Sesion cerrada!" << endl;
+}
+
+// implementacion de la funcion logoutAdmin
+void logoutAdmin()
+{
+    isLogged = false;
+    isAdmin = false;
     cout << "¡Sesion cerrada!" << endl;
 }
 
@@ -274,4 +289,116 @@ void deleteAccount()
     isAdmin = false;
     loggedUser = User();
     cout << "¡Cuenta eliminada!" << endl;
+}
+
+// implementacion de la funcion loadUsers
+void loadUsers()
+{
+    std::ifstream file("src/usuarios.json");
+    if (!file.is_open())
+    {
+        std::cerr << "Error opening file" << std::endl;
+    }
+
+    json usuarios;
+    try
+    {
+        usuarios = json::parse(file);
+    }
+    catch (const json::parse_error &e)
+    {
+        std::cerr << "JSON parsing error: " << e.what() << std::endl;
+    }
+
+    for (const auto &usuario : usuarios)
+    {
+        // Crear usuarios de prueba
+        User user(usuario["nombres"], usuario["apellidos"], usuario["fecha_de_nacimiento"], usuario["correo"], usuario["contraseña"]);
+        list.insert(user);
+    }
+}
+
+// implementacion de la funcion loadRequests
+void loadRequests()
+{
+    std::ifstream file("src/solicitudes.json");
+    if (!file.is_open())
+    {
+        std::cerr << "Error opening file" << std::endl;
+    }
+
+    json solicitudes;
+    try
+    {
+        solicitudes = json::parse(file);
+    }
+    catch (const json::parse_error &e)
+    {
+        std::cerr << "JSON parsing error: " << e.what() << std::endl;
+    }
+
+    for (const auto &solicitud : solicitudes)
+    {
+        // si el estado de la solicitud es pendiente, agregarla a la lista de solicitudes del usuario receptor y emisor
+        // si el estado de la solicitud es aceptado, agregar a la matriz de relaciones y a la lista de amigos de ambos usuarios
+
+        string emisor = solicitud["emisor"];
+        string receptor = solicitud["receptor"];
+        string estado = solicitud["estado"];
+
+        // mostrar por consola las solicitudes cargadas
+        cout << "Emisor: " << emisor << endl;
+        cout << "Receptor: " << receptor << endl;
+        cout << "Estado: " << estado << endl;
+
+        if (estado == "PENDIENTE")
+        {
+            Request request(emisor, receptor, estado);
+            Node *receiver = list.search(receptor);
+            receiver->user.addRequestReceived(request);
+            Node *sender = list.search(emisor);
+            sender->user.addRequestSent(request);
+        }
+        else if (estado == "ACEPTADA")
+        {
+            // agregar a la matriz de relaciones
+            matrixRelation.insert(emisor, receptor, 1);
+
+            // agregar a la lista de amigos de ambos usuarios
+            Node *user1 = list.search(emisor);
+            Node *user2 = list.search(receptor);
+            user1->user.addFriend(receptor);
+            user2->user.addFriend(emisor);
+        }
+    }
+}
+
+// implementacion de la funcion loadPosts
+void loadPosts()
+{
+    std::ifstream file("src/publicaciones.json");
+    if (!file.is_open())
+    {
+        std::cerr << "Error opening file" << std::endl;
+    }
+
+    json publicaciones;
+    try
+    {
+        publicaciones = json::parse(file);
+    }
+    catch (const json::parse_error &e)
+    {
+        std::cerr << "JSON parsing error: " << e.what() << std::endl;
+    }
+
+    for (const auto &publicacion : publicaciones)
+    {
+        // Crear publicaciones de prueba
+        Post post(publicacion["correo"], publicacion["contenido"], publicacion["fecha"], publicacion["hora"]);
+        posts.addNode(post);
+
+        // mostrar por consola las publicaciones cargadas
+        post.printPost();
+    }
 }

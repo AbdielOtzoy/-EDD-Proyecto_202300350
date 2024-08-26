@@ -1,0 +1,72 @@
+[
+    {
+        "nombres": "Juan",
+        "apellidos": "Perez",
+        "fecha_de_nacimiento": "2004/08/12",
+        "correo": "jperez@gmail.com",
+        "contraseña": "123456"
+    },
+    {
+        "nombres": "Maria",
+        "apellidos": "Gomez",
+        "fecha_de_nacimiento": "2002/05/23",
+        "correo": "mgomez@hotmail.com",
+        "contraseña": "abcdef"
+    },
+    {
+        "nombres": "Carlos",
+        "apellidos": "Lopez",
+        "fecha_de_nacimiento": "1999/11/08",
+        "correo": "clopez@yahoo.com",
+        "contraseña": "qwerty"
+    },
+    {
+        "nombres": "Ana",
+        "apellidos": "Martinez",
+        "fecha_de_nacimiento": "1995/07/19",
+        "correo": "amartinez@gmail.com",
+        "contraseña": "password1"
+    },
+    {
+        "nombres": "Pedro",
+        "apellidos": "Sanchez",
+        "fecha_de_nacimiento": "1998/04/30",
+        "correo": "psanchez@gmail.com",
+        "contraseña": "pass123"
+    },
+    {
+        "nombres": "Lucia",
+        "apellidos": "Ramirez",
+        "fecha_de_nacimiento": "2000/09/14",
+        "correo": "lramirez@yahoo.com",
+        "contraseña": "lucia2021"
+    },
+    {
+        "nombres": "Jose",
+        "apellidos": "Fernandez",
+        "fecha_de_nacimiento": "1996/12/25",
+        "correo": "jfernandez@hotmail.com",
+        "contraseña": "fernandez"
+    },
+    {
+        "nombres": "Elena",
+        "apellidos": "Torres",
+        "fecha_de_nacimiento": "2001/03/05",
+        "correo": "etorres@gmail.com",
+        "contraseña": "123abc"
+    },
+    {
+        "nombres": "Miguel",
+        "apellidos": "Vargas",
+        "fecha_de_nacimiento": "1997/06/15",
+        "correo": "mvargas@gmail.com",
+        "contraseña": "miguel987"
+    },
+    {
+        "nombres": "Laura",
+        "apellidos": "Hernandez",
+        "fecha_de_nacimiento": "2003/10/20",
+        "correo": "lhernandez@hotmail.com",
+        "contraseña": "laura1234"
+    }
+]

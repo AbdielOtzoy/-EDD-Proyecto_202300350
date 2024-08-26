@@ -65,12 +65,15 @@ int main()
             {
             case 1:
                 cout << "Cargar usuarios" << endl;
+                loadUsers();
                 break;
             case 2:
                 cout << "Cargar relaciones" << endl;
+                loadRequests();
                 break;
             case 3:
                 cout << "Cargar publicaciones" << endl;
+                loadPosts();
                 break;
             case 4:
                 cout << "Gestionar usuarios" << endl;
@@ -80,7 +83,7 @@ int main()
                 break;
             case 6:
                 cout << "Cerrar sesion" << endl;
-                logoutUser();
+                logoutAdmin();
                 break;
             default:
                 cout << "Opcion no valida" << endl;
@@ -88,7 +91,7 @@ int main()
         }
 
         // mostrar menu de usuario logeado
-        if (isLogged == true)
+        if (isLogged == true && isAdmin == false)
         {
             cout << "========= USER DASHBORAD =========" << endl;
             cout << "1. Perfil" << endl;

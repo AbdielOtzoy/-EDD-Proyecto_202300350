@@ -1,0 +1,62 @@
+[
+    {
+        "correo": "jperez@gmail.com",
+        "contenido": "Que buen día para salir a pasear",
+        "fecha": "2021/06/01",
+        "hora": "10:30"
+    },
+    {
+        "correo": "mgomez@hotmail.com",
+        "contenido": "Empezando a leer un nuevo libro hoy!",
+        "fecha": "2021/06/02",
+        "hora": "14:45"
+    },
+    {
+        "correo": "clopez@yahoo.com",
+        "contenido": "¡Qué emocionante ver el partido anoche!",
+        "fecha": "2021/06/02",
+        "hora": "20:00"
+    },
+    {
+        "correo": "amartinez@gmail.com",
+        "contenido": "Haciendo una caminata en la montaña.",
+        "fecha": "2021/06/03",
+        "hora": "08:15"
+    },
+    {
+        "correo": "psanchez@gmail.com",
+        "contenido": "Preparando una nueva receta de cocina.",
+        "fecha": "2021/06/03",
+        "hora": "12:00"
+    },
+    {
+        "correo": "lramirez@yahoo.com",
+        "contenido": "Practicando piano toda la tarde.",
+        "fecha": "2021/06/04",
+        "hora": "17:30"
+    },
+    {
+        "correo": "jfernandez@hotmail.com",
+        "contenido": "¡Finalmente terminé mi proyecto!",
+        "fecha": "2021/06/04",
+        "hora": "19:45"
+    },
+    {
+        "correo": "etorres@gmail.com",
+        "contenido": "Tomando un descanso y viendo una película.",
+        "fecha": "2021/06/05",
+        "hora": "21:00"
+    },
+    {
+        "correo": "mvargas@gmail.com",
+        "contenido": "Explorando nuevas ideas para mi próximo artículo.",
+        "fecha": "2021/06/06",
+        "hora": "09:30"
+    },
+    {
+        "correo": "lhernandez@hotmail.com",
+        "contenido": "Un día perfecto para salir a correr.",
+        "fecha": "2021/06/06",
+        "hora": "07:00"
+    }
+]

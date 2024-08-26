@@ -11,6 +11,7 @@ void addTestData();
 void loginUser();
 void registerUser();
 void logoutUser();
+void logoutAdmin();
 void sendRequest();
 void respondRequest();
 void createPost();
@@ -18,5 +19,8 @@ void viewProfile();
 void viewMyFriends();
 void viewAvailablePosts();
 void deleteAccount();
+void loadUsers();
+void loadRequests();
+void loadPosts();
 
 #endif
