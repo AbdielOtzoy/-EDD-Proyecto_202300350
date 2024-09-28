@@ -1,7 +1,5 @@
 digraph G {
   rankdir=TB;
   node [shape=record, style=filled, color=lightcoral];
-  node0 [label="{Emisor: maria.lopez@example.com|Receptor: carlos.gomez@example.com|Estado: pending}"];
-  node1 [label="{Emisor: maria.lopez@example.com|Receptor: carlos.gomez@example.com|Estado: PENDIENTE}"];
-  node0 -> node1 [dir=back];
+  node0 [label="{Emisor: jose.garcia@example.com|Receptor: elena.torres@example.com|Estado: PENDIENTE}"];
 }

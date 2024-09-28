@@ -21,6 +21,7 @@ digraph G {
   node17 [label="{Autor: elena.torres@example.com|Fecha: 13/08/2024|Hora: 22:45|Los pequeños detalles hacen la diferencia, siempre presta atención.}"];
   node18 [label="{Autor: jose.garcia@example.com|Fecha: 15/08/2024|Hora: 14:55|El camino hacia el éxito está lleno de retos, pero vale la pena.}"];
   node19 [label="{Autor: carlos.gomez@example.com|Fecha: 18/08/2024|Hora: 09:30|Las sonrisas sinceras son el mejor regalo que puedes dar.}"];
+  node20 [label="{Autor: elena.torres@example.com|Fecha: 27/8/2024|Hora: 13:59:41|publicacion de elena}"];
   node0 -> node1 [dir=both];
   node1 -> node2 [dir=both];
   node2 -> node3 [dir=both];
@@ -40,4 +41,5 @@ digraph G {
   node16 -> node17 [dir=both];
   node17 -> node18 [dir=both];
   node18 -> node19 [dir=both];
+  node19 -> node20 [dir=both];
 }

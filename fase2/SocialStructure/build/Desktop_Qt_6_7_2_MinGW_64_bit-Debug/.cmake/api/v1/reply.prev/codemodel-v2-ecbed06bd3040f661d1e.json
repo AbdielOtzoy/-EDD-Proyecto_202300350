@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-1fe60953a4a11df7c9e6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SocialStructure",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SocialStructure::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SocialStructure-Debug-4c26dd07d105cb99d9a0.json",
+					"name" : "SocialStructure",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SocialStructure_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SocialStructure_autogen-Debug-2755de281dcdf6326ef1.json",
+					"name" : "SocialStructure_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SocialStructure_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SocialStructure_autogen_timestamp_deps-Debug-e3213dec9721094ec3bc.json",
+					"name" : "SocialStructure_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug",
+		"source" : "C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

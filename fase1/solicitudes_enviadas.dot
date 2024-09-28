@@ -1,5 +1,5 @@
 digraph G {
   rankdir=LR;
   node [shape=box, style=filled, color=lightblue];
-  node0 [label="Emisor: maria.lopez@example.com\nReceptor: carlos.gomez@example.com\nEstado: PENDIENTE"];
+  node0 [label="Emisor: elena.torres@example.com\nReceptor: luis.perez@example.com\nEstado: PENDIENTE"];
 }
