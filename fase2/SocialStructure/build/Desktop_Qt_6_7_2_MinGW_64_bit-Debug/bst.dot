@@ -1,0 +1,15 @@
+digraph G {
+Nodo0x2c6f88ca770[label = "12/08/2024"]
+Nodo0x2c6f88ca770 -> Nodo0x2c6f88cc110
+Nodo0x2c6f88ca770 -> Nodo0x2c6f88cc930
+Nodo0x2c6f88cc110[label = "11/08/2024", style=filled, fillcolor=green]
+Nodo0x2c6f88cc110 -> Nodo0x2c6f88cc570
+Nodo0x2c6f88cc570[label = "10/08/2024"]
+Nodo0x2c6f88cc930[label = "17/08/2024"]
+Nodo0x2c6f88cc930 -> Nodo0x2c6f88ccbb0
+Nodo0x2c6f88cc930 -> Nodo0x2c6f88ccb10
+Nodo0x2c6f88ccbb0[label = "16/08/2024"]
+Nodo0x2c6f88ccb10[label = "21/08/2024"]
+Nodo0x2c6f88ccb10 -> Nodo0x2c6f88cc390
+Nodo0x2c6f88cc390[label = "18/08/2024"]
+}

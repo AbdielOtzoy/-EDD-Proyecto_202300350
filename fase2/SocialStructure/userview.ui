@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="Buscar">
     <attribute name="title">
@@ -176,7 +176,7 @@ font: bold;</string>
      <property name="title">
       <string>Buscar por fecha</string>
      </property>
-     <widget class="QDateEdit" name="dateEdit">
+     <widget class="QDateEdit" name="dateFilter">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -269,7 +269,7 @@ border-radius: 5px;</string>
        <string>Aplicar</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="orden">
       <property name="geometry">
        <rect>
         <x>90</x>
@@ -297,7 +297,7 @@ border-radius: 5px;</string>
        </property>
       </item>
      </widget>
-     <widget class="QTextEdit" name="textEdit">
+     <widget class="QTextEdit" name="cantidad">
       <property name="geometry">
        <rect>
         <x>90</x>
@@ -399,6 +399,36 @@ font: bold;</string>
         <height>109</height>
        </rect>
       </property>
+      <widget class="QTableWidget" name="topPostsDates">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>301</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string>Fecha</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Cantidad de publicaciones</string>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <stylestrategy>NoAntialias</stylestrategy>
+          <hintingpreference>PreferNoHinting</hintingpreference>
+         </font>
+        </property>
+       </column>
+      </widget>
      </widget>
     </widget>
     <widget class="QScrollArea" name="scrollArea_6">
@@ -422,6 +452,31 @@ font: bold;</string>
         <height>109</height>
        </rect>
       </property>
+      <widget class="QTableWidget" name="topPostComments">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>321</width>
+         <height>192</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string>Fecha</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Usuario</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>No. Comentarios</string>
+        </property>
+       </column>
+      </widget>
      </widget>
     </widget>
     <widget class="QScrollArea" name="scrollArea_7">
@@ -445,6 +500,51 @@ font: bold;</string>
         <height>149</height>
        </rect>
       </property>
+      <widget class="QDateEdit" name="bstFilter">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>50</y>
+         <width>121</width>
+         <height>25</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_9">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>90</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">  border: 0;
+  border-radius: 100px;
+  background-color: orange;
+  color: #ffffff;
+  font-weight: Bold;
+font-size: 14px;
+border-radius: 5px;</string>
+       </property>
+       <property name="text">
+        <string>Aplicar</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="bstImage">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>20</y>
+         <width>221</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QPushButton" name="pushButton_6">
@@ -759,7 +859,7 @@ font-size: 14px;
 border-radius: 5px;</string>
      </property>
      <property name="text">
-      <string>Editar Perfil</string>
+      <string>Editar perfil</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_8">
@@ -784,12 +884,12 @@ border-radius: 5px;</string>
       <string>Eliminar Cuenta</string>
      </property>
     </widget>
-    <widget class="QLabel" name="name">
+    <widget class="QLabel" name="nameLabel">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>110</y>
-       <width>341</width>
+       <x>70</x>
+       <y>100</y>
+       <width>91</width>
        <height>31</height>
       </rect>
      </property>
@@ -801,12 +901,12 @@ font: bold;</string>
       <string>Nombre: </string>
      </property>
     </widget>
-    <widget class="QLabel" name="lastname">
+    <widget class="QLabel" name="lastnameLabel">
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>70</x>
        <y>150</y>
-       <width>301</width>
+       <width>101</width>
        <height>31</height>
       </rect>
      </property>
@@ -818,12 +918,12 @@ font: bold;</string>
       <string>Apellidos:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="email">
+    <widget class="QLabel" name="emailLabel">
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>70</x>
        <y>190</y>
-       <width>301</width>
+       <width>381</width>
        <height>31</height>
       </rect>
      </property>
@@ -835,12 +935,12 @@ font: bold;</string>
       <string>Correo: </string>
      </property>
     </widget>
-    <widget class="QLabel" name="password">
+    <widget class="QLabel" name="passwordLabel">
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>70</x>
        <y>230</y>
-       <width>361</width>
+       <width>111</width>
        <height>31</height>
       </rect>
      </property>
@@ -852,12 +952,12 @@ font: bold;</string>
       <string>Contraseña: </string>
      </property>
     </widget>
-    <widget class="QLabel" name="birthdate">
+    <widget class="QLabel" name="birthdateLabel">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>280</y>
-       <width>391</width>
+       <x>70</x>
+       <y>270</y>
+       <width>171</width>
        <height>31</height>
       </rect>
      </property>
@@ -867,6 +967,46 @@ font: bold;</string>
      </property>
      <property name="text">
       <string>Fecha nacimiento: </string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="nameInput">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>100</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="lastnameInput">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>140</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="passwordInput">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>230</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="birthdateInput">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>270</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
      </property>
     </widget>
    </widget>

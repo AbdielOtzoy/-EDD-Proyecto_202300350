@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 80,
+				"line" : 84,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 63,
+				"line" : 67,
 				"parent" : 0
 			},
 			{
@@ -381,18 +381,22 @@
 				36,
 				38,
 				41,
-				43
+				43,
+				45,
+				47,
+				49,
+				51
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "SocialStructure_autogen::@6890427a1f51a3e7e1df"
+			"id" : "SocialStructure_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "SocialStructure_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "SocialStructure_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "SocialStructure::@6890427a1f51a3e7e1df",
@@ -521,7 +525,11 @@
 				36,
 				38,
 				41,
-				43
+				43,
+				45,
+				47,
+				49,
+				51
 			]
 		},
 		{
@@ -547,11 +555,15 @@
 				40,
 				42,
 				44,
-				45,
 				46,
-				47,
 				48,
-				49
+				50,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57
 			]
 		},
 		{
@@ -564,14 +576,14 @@
 				13,
 				26,
 				39,
-				50
+				58
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				51
+				59
 			]
 		}
 	],
@@ -816,6 +828,50 @@
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "structures/btree.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "structures/matrix/matrix/matrixnode.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "structures/matrix/matrix/matrixnode.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "structures/matrix/simpleList/listnode.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "structures/matrix/simpleList/listnode.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "structures/matrix/simpleList/simplelist.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "structures/matrix/simpleList/simplelist.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "structures/matrix/matrix/matrix.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "structures/matrix/matrix/matrix.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

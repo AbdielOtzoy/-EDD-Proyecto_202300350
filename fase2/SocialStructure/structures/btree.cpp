@@ -149,35 +149,35 @@ void BTree::pushNode(Page *current, Comment key, Page *rd, int k)
     current->count++;
 }
 
-void BTree::getContent(Page *current, stringstream &accum, int &countNode, int &countAux, stringstream &accumLink)
-{
-    // Comienza a crear un nodo en DOT
+void BTree::getContent(Page *current, stringstream &accum, int &countNode, int &countAux, stringstream &accumLink) {
+    if (current == nullptr) {
+        return;
+    }
+
+    // Create a node in DOT
     accum << "node" << countNode << "[label=\"";
     accum << "<r0>";
 
-    // Si hay ramas a la izquierda del primer comentario
-    if (current->branches[0] != nullptr)
-    {
+    // If there are branches to the left of the first comment
+    if (current->branches[0] != nullptr) {
         accumLink << "\"node" << countNode << "\":r0 ->";
         countAux++;
         accumLink << "\"node" << countAux << "\"\n";
     }
 
-    // Itera sobre los comentarios en la página actual
-    for (int i = 1; i <= current->count; i++)
-    {
+    // Iterate over the comments in the current page
+    for (int i = 1; i <= current->count; i++) {
         accum << "|";
 
-        // Extraer el comentario actual
+        // Extract the current comment
         Comment comment = current->keys[i];
 
-        // Mostrar la fecha y hora del comentario como identificador
+        // Show the date and time of the comment as an identifier
         accum << "<c" << i << "> " << comment.getDate() << " " << comment.getTime();
         accum << "|<r" << i << ">";
 
-        // Si hay ramas a la derecha de este comentario
-        if (current->branches[i] != nullptr)
-        {
+        // If there are branches to the right of this comment
+        if (current->branches[i] != nullptr) {
             accumLink << "\"node" << countNode << "\":r" << i << " -> ";
             countAux++;
             accumLink << "\"node" << countAux << "\"\n";
@@ -185,6 +185,11 @@ void BTree::getContent(Page *current, stringstream &accum, int &countNode, int &
     }
 
     accum << "\"];\n";
+
+    // Recursively traverse the tree and generate DOT code for all nodes
+    for (int i = 0; i <= current->count; i++) {
+        getContent(current->branches[i], accum, countNode, countAux, accumLink);
+    }
 }
 
 void BTree::write_dot(string code)
@@ -342,4 +347,22 @@ void BTree::fillLayoutWithComments(Page *currentPage, QVBoxLayout *layout) {
     fillLayoutWithComments(currentPage->branches[currentPage->count], layout);
 }
 
+int BTree::countNodes() {
+    return countNodes(root);
+}
+
+int BTree::countNodes(Page *currentPage) {
+    if (currentPage == nullptr) {
+        return 0; // Si la página es nula, no hay nodos
+    }
+
+    int total = currentPage->count; // Contamos los nodos (comentarios) en la página actual
+
+    // Recorremos cada rama (subpágina) y sumamos los nodos de cada una
+    for (int i = 0; i <= currentPage->count; i++) {
+        total += countNodes(currentPage->branches[i]); // Sumar los nodos de la rama
+    }
+
+    return total; // Devolvemos el total de nodos
+}
 

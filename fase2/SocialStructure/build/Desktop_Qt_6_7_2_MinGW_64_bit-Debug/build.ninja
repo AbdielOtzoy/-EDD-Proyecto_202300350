@@ -209,6 +209,38 @@ build CMakeFiles/SocialStructure.dir/structures/btree.cpp.obj: CXX_COMPILER__Soc
   OBJECT_DIR = CMakeFiles\SocialStructure.dir
   OBJECT_FILE_DIR = CMakeFiles\SocialStructure.dir\structures
 
+build CMakeFiles/SocialStructure.dir/structures/matrix/matrix/matrixnode.cpp.obj: CXX_COMPILER__SocialStructure_unscanned_Debug C$:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/matrix/matrixnode.cpp || cmake_object_order_depends_target_SocialStructure
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\SocialStructure.dir\structures\matrix\matrix\matrixnode.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SocialStructure_autogen/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\SocialStructure.dir
+  OBJECT_FILE_DIR = CMakeFiles\SocialStructure.dir\structures\matrix\matrix
+
+build CMakeFiles/SocialStructure.dir/structures/matrix/simpleList/listnode.cpp.obj: CXX_COMPILER__SocialStructure_unscanned_Debug C$:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/simpleList/listnode.cpp || cmake_object_order_depends_target_SocialStructure
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\SocialStructure.dir\structures\matrix\simpleList\listnode.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SocialStructure_autogen/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\SocialStructure.dir
+  OBJECT_FILE_DIR = CMakeFiles\SocialStructure.dir\structures\matrix\simpleList
+
+build CMakeFiles/SocialStructure.dir/structures/matrix/simpleList/simplelist.cpp.obj: CXX_COMPILER__SocialStructure_unscanned_Debug C$:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/simpleList/simplelist.cpp || cmake_object_order_depends_target_SocialStructure
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\SocialStructure.dir\structures\matrix\simpleList\simplelist.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SocialStructure_autogen/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\SocialStructure.dir
+  OBJECT_FILE_DIR = CMakeFiles\SocialStructure.dir\structures\matrix\simpleList
+
+build CMakeFiles/SocialStructure.dir/structures/matrix/matrix/matrix.cpp.obj: CXX_COMPILER__SocialStructure_unscanned_Debug C$:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/matrix/matrix.cpp || cmake_object_order_depends_target_SocialStructure
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\SocialStructure.dir\structures\matrix\matrix\matrix.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/SocialStructure_autogen/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\SocialStructure.dir
+  OBJECT_FILE_DIR = CMakeFiles\SocialStructure.dir\structures\matrix\matrix
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target SocialStructure
@@ -217,7 +249,7 @@ build CMakeFiles/SocialStructure.dir/structures/btree.cpp.obj: CXX_COMPILER__Soc
 #############################################
 # Link the executable SocialStructure.exe
 
-build SocialStructure.exe: CXX_EXECUTABLE_LINKER__SocialStructure_Debug CMakeFiles/SocialStructure.dir/SocialStructure_autogen/mocs_compilation.cpp.obj CMakeFiles/SocialStructure.dir/main.cpp.obj CMakeFiles/SocialStructure.dir/mainwindow.cpp.obj CMakeFiles/SocialStructure.dir/register.cpp.obj CMakeFiles/SocialStructure.dir/userview.cpp.obj CMakeFiles/SocialStructure.dir/adminview.cpp.obj CMakeFiles/SocialStructure.dir/user.cpp.obj CMakeFiles/SocialStructure.dir/structures/avl.cpp.obj CMakeFiles/SocialStructure.dir/appstage.cpp.obj CMakeFiles/SocialStructure.dir/models/post.cpp.obj CMakeFiles/SocialStructure.dir/structures/doublylist.cpp.obj CMakeFiles/SocialStructure.dir/postform.cpp.obj CMakeFiles/SocialStructure.dir/structures/bst.cpp.obj CMakeFiles/SocialStructure.dir/models/request.cpp.obj CMakeFiles/SocialStructure.dir/structures/list.cpp.obj CMakeFiles/SocialStructure.dir/structures/stack.cpp.obj CMakeFiles/SocialStructure.dir/structures/friendlist.cpp.obj CMakeFiles/SocialStructure.dir/commentform.cpp.obj CMakeFiles/SocialStructure.dir/models/comment.cpp.obj CMakeFiles/SocialStructure.dir/structures/btree.cpp.obj | C$:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.2/mingw_64/lib/libQt6EntryPoint.a || SocialStructure_autogen SocialStructure_autogen_timestamp_deps
+build SocialStructure.exe: CXX_EXECUTABLE_LINKER__SocialStructure_Debug CMakeFiles/SocialStructure.dir/SocialStructure_autogen/mocs_compilation.cpp.obj CMakeFiles/SocialStructure.dir/main.cpp.obj CMakeFiles/SocialStructure.dir/mainwindow.cpp.obj CMakeFiles/SocialStructure.dir/register.cpp.obj CMakeFiles/SocialStructure.dir/userview.cpp.obj CMakeFiles/SocialStructure.dir/adminview.cpp.obj CMakeFiles/SocialStructure.dir/user.cpp.obj CMakeFiles/SocialStructure.dir/structures/avl.cpp.obj CMakeFiles/SocialStructure.dir/appstage.cpp.obj CMakeFiles/SocialStructure.dir/models/post.cpp.obj CMakeFiles/SocialStructure.dir/structures/doublylist.cpp.obj CMakeFiles/SocialStructure.dir/postform.cpp.obj CMakeFiles/SocialStructure.dir/structures/bst.cpp.obj CMakeFiles/SocialStructure.dir/models/request.cpp.obj CMakeFiles/SocialStructure.dir/structures/list.cpp.obj CMakeFiles/SocialStructure.dir/structures/stack.cpp.obj CMakeFiles/SocialStructure.dir/structures/friendlist.cpp.obj CMakeFiles/SocialStructure.dir/commentform.cpp.obj CMakeFiles/SocialStructure.dir/models/comment.cpp.obj CMakeFiles/SocialStructure.dir/structures/btree.cpp.obj CMakeFiles/SocialStructure.dir/structures/matrix/matrix/matrixnode.cpp.obj CMakeFiles/SocialStructure.dir/structures/matrix/simpleList/listnode.cpp.obj CMakeFiles/SocialStructure.dir/structures/matrix/simpleList/simplelist.cpp.obj CMakeFiles/SocialStructure.dir/structures/matrix/matrix/matrix.cpp.obj | C$:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.2/mingw_64/lib/libQt6EntryPoint.a || SocialStructure_autogen SocialStructure_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.7.2/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

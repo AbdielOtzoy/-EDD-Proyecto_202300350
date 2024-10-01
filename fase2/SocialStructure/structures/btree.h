@@ -44,6 +44,8 @@ public:
     void printTree(Page *current);
     void fillLayoutWithComments(QVBoxLayout *layout);
     void fillLayoutWithComments(Page *currentPage, QVBoxLayout *layout);
+    int countNodes();
+    int countNodes(Page *currentPage);
 };
 
 #endif // BTREE_H

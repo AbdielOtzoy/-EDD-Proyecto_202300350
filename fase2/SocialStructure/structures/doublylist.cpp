@@ -4,6 +4,11 @@
 #include "doublylist.h"
 #include "friendlist.h"
 #include <QDebug>
+#include <map>
+#include <vector>
+#include <algorithm>
+#include <QString>
+#include <QTableWidget>
 #include "bst.h"
 #include "../models/post.h"
 
@@ -123,9 +128,9 @@ void DoublyList::createDotFile()
         while (current != NULL)
         {
             file << "  node" << nodeId << " [label=\"{"
-                 << "Autor: " << current->post.getAuthor() << "|"
-                 << "Fecha: " << current->post.getDate() << "|"
-                 << "Hora: " << current->post.getTime() << "|"
+                 << "Autor: " << current->post.getAuthor() << "\\l"
+                 << "Fecha: " << current->post.getDate() << "\\l"
+                 << "Hora: " << current->post.getTime() << "\\l"
                  << current->post.getContent() << "}\"];" << endl;
             current = current->next;
             nodeId++;
@@ -141,7 +146,11 @@ void DoublyList::createDotFile()
             nodeId++;
         }
 
+        stringstream ss;
+        file << ss.str();
         file << "}" << endl;
+        file.close();
+        system("dot -Tpng posts.dot -o posts.png");
         file.close();
     }
     else
@@ -149,6 +158,7 @@ void DoublyList::createDotFile()
         cout << "No se pudo abrir el archivo" << endl;
     }
 }
+
 
 void DoublyList::topFiveUsersWithMostPosts()
 {
@@ -244,3 +254,91 @@ void DoublyList::insertCommentByContent(string contentToFind, Comment commentToI
     }
     qDebug() << "No se encontró la publicación con ese contenido.";
 }
+
+// Método para llenar un QTableWidget con las tres fechas con más publicaciones
+void DoublyList::fillTableWithTopDates(QTableWidget* tableWidget) {
+    // Crear un mapa para contar la cantidad de publicaciones por fecha
+    std::map<std::string, int> dateCount;
+    NodeDoubly* current = this->head;
+
+    // Recorrer la lista y contar las publicaciones por fecha
+    while (current != nullptr) {
+        std::string date = current->post.getDate();
+        dateCount[date]++;
+        current = current->next;
+    }
+
+    // Convertir el mapa en un vector de pares (fecha, cantidad de publicaciones)
+    std::vector<std::pair<std::string, int>> dateVector(dateCount.begin(), dateCount.end());
+
+    // Ordenar el vector en función de la cantidad de publicaciones de forma descendente
+    std::sort(dateVector.begin(), dateVector.end(), [](const std::pair<std::string, int>& a, const std::pair<std::string, int>& b) {
+        return a.second > b.second;
+    });
+
+    // Limpiar la tabla antes de llenarla
+    tableWidget->clear();
+
+    // Configurar el número de filas y columnas de la tabla
+    tableWidget->setRowCount(3);
+    tableWidget->setColumnCount(2);
+
+    // Configurar las cabeceras de la tabla
+    QStringList headers;
+    headers << "Fecha" << "Cantidad de Publicaciones";
+    tableWidget->setHorizontalHeaderLabels(headers);
+
+    // Llenar la tabla con las tres primeras fechas
+    for (int i = 0; i < 3 && i < dateVector.size(); ++i) {
+        QString date = QString::fromStdString(dateVector[i].first);
+        QString count = QString::number(dateVector[i].second);
+
+        // Insertar la fecha y la cantidad de publicaciones en las celdas correspondientes
+        tableWidget->setItem(i, 0, new QTableWidgetItem(date));
+        tableWidget->setItem(i, 1, new QTableWidgetItem(count));
+    }
+}
+
+void DoublyList::fillTableWithTopPostsComments(QTableWidget *tableWidget) {
+    // Crear un vector para almacenar las publicaciones junto con su conteo de comentarios
+    std::vector<std::pair<Post, int>> postsWithComments;
+    NodeDoubly* current = this->head;
+
+    // Recorrer la lista y contar los comentarios para cada publicación
+    while (current != nullptr) {
+        int commentCount = current->post.comments.countNodes(); // Obtener la cantidad de comentarios
+        postsWithComments.emplace_back(current->post, commentCount); // Almacenar publicación y su conteo
+        current = current->next;
+    }
+
+    // Ordenar el vector en función de la cantidad de comentarios de forma descendente
+    std::sort(postsWithComments.begin(), postsWithComments.end(), [](const auto& a, const auto& b) {
+        return a.second > b.second; // Ordenar por el conteo de comentarios
+    });
+
+    // Limpiar la tabla antes de llenarla
+    tableWidget->clear();
+
+    // Configurar el número de filas y columnas de la tabla
+    tableWidget->setRowCount(3);
+    tableWidget->setColumnCount(3); // Tres columnas: Autor, Cantidad de Comentarios, Contenido
+
+    // Configurar las cabeceras de la tabla
+    QStringList headers;
+    headers << "fecha" << "Usuario" << "No. comentarios";
+    tableWidget->setHorizontalHeaderLabels(headers);
+
+    // Llenar la tabla con las tres publicaciones con más comentarios
+    for (int i = 0; i < 3 && i < postsWithComments.size(); ++i) {
+        const Post& post = postsWithComments[i].first;
+        QString date = QString::fromStdString(post.getDate());
+        QString author = QString::fromStdString(post.getAuthor());
+        QString count = QString::number(postsWithComments[i].second);
+
+        // Insertar en las celdas correspondientes
+        tableWidget->setItem(i, 0, new QTableWidgetItem(date));
+        tableWidget->setItem(i, 1, new QTableWidgetItem(author));
+        tableWidget->setItem(i, 2, new QTableWidgetItem(count));
+    }
+}
+

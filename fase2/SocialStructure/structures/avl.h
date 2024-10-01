@@ -6,6 +6,7 @@
 #include <QTableWidget>
 #include <QPushButton>
 #include "../user.h"
+#include "../models/request.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ struct nodo
     User data; // Ahora almacenamos un objeto User
     nodo *Izq;
     nodo *Der;
+    int altura;
 };
 
 typedef struct nodo *Nodo;
@@ -27,7 +29,11 @@ public:
     void ver();
     void agregar(User user);
     void elimina();
+    Nodo eliminar(Nodo &raiz, string email);
+    Nodo getMinValueNode(Nodo nodo);
+    void eliminar(string email);
     Nodo buscar(string email);
+    void buscarActualizar(string email, User userUpdated);
     int contar();
     Nodo getRaiz();
     int nodoN(Nodo, int);
@@ -41,6 +47,14 @@ public:
 
     void agregarUsuariosATabla(QTableWidget *table, User *userLogged);
     void agregarUsuariosATabla(Nodo &, QTableWidget *table, User *userLogged);
+    void procesarRequest(Request* request);
+    int altura(Nodo nodo);
+    int getBalance(Nodo nodo);
+    Nodo rotacionDerecha(Nodo &y);
+    Nodo rotacionIzquierda(Nodo &x);
+    void fillUsersTableWithOrden(QTableWidget *table, string orden);
+    void fillUsersTableWithOrden(Nodo &, QTableWidget *table, string orden);
+    void agregarTabla(Nodo &, QTableWidget *table);
 
     virtual ~
         Avl();

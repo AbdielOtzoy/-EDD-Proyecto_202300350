@@ -1,5 +1,21 @@
 digraph G {
-asdfasd[label="asdfasd"];
-asdfasd->asdfasd;
-asdfasd[label="asdfasd"];
+juan_martinez_example_com[label="juan.martinez@example.com"];
+juan_martinez_example_com->carlos_gomez_example_com;
+juan_martinez_example_com->luis_perez_example_com;
+carlos_gomez_example_com[label="carlos.gomez@example.com"];
+carlos_gomez_example_com->ana_hernandez_example_com;
+carlos_gomez_example_com->jose_garcia_example_com;
+ana_hernandez_example_com[label="ana.hernandez@example.com"];
+jose_garcia_example_com[label="jose.garcia@example.com"];
+jose_garcia_example_com->elena_torres_example_com;
+elena_torres_example_com[label="elena.torres@example.com"];
+luis_perez_example_com[label="luis.perez@example.com"];
+luis_perez_example_com->laura_ramirez_example_com;
+luis_perez_example_com->miguel_rodriguez_example_com;
+laura_ramirez_example_com[label="laura.ramirez@example.com"];
+miguel_rodriguez_example_com[label="miguel.rodriguez@example.com"];
+miguel_rodriguez_example_com->maria_lopez_example_com;
+miguel_rodriguez_example_com->sofia_gonzalez_example_com;
+maria_lopez_example_com[label="maria.lopez@example.com"];
+sofia_gonzalez_example_com[label="sofia.gonzalez@example.com"];
 }

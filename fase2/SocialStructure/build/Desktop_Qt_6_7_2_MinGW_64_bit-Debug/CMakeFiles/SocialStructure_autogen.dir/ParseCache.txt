@@ -705,6 +705,7 @@ C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/Soci
  mdp:C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/register.h
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/mainwindow.cpp
  uic:./ui_mainwindow.h
+C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/simpleList/simplelist.h
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/main.cpp
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/register.cpp
  uic:ui_register.h
@@ -1681,10 +1682,12 @@ C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/Soci
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_list.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_map.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_multimap.h
+ mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_multiset.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_numeric.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_pair.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_raw_storage_iter.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_relops.h
+ mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_set.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_tempbuf.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_tree.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_uninitialized.h
@@ -1747,6 +1750,7 @@ C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/Soci
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/pstl/glue_memory_defs.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/pstl/glue_numeric_defs.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ratio
+ mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/set
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/sstream
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/stdexcept
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/stdlib.h
@@ -1846,10 +1850,13 @@ C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/Soci
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/user.h
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/avl.cpp
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/user.cpp
+C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/matrix/matrix.h
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/doublylist.h
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/appstage.cpp
+C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/simpleList/simplelist.cpp
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/models/post.h
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/models/post.cpp
+C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/matrix/matrix.cpp
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/doublylist.cpp
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/bst.h
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/postform.h
@@ -2597,5 +2604,9 @@ C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/Soci
  mdp:C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/btree.h
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/commentform.cpp
  uic:ui_commentform.h
+C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/simpleList/listnode.cpp
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/btree.h
 C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/btree.cpp
+C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/matrix/matrixnode.h
+C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/simpleList/listnode.h
+C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/matrix/matrixnode.cpp

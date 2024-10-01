@@ -4,6 +4,7 @@
 #include "friendlist.h"
 #include "bst.h"
 #include "../models/comment.h"
+#include <QTableWidget>
 
 using namespace std;
 
@@ -35,6 +36,8 @@ public:
     void fillBstPosts(FriendList &friends, string userlogged, BST &bst);
     bool isFriend(FriendList &friends, string author);
     void insertCommentByContent(string contentToFind, Comment commentToInsert);
+    void fillTableWithTopDates(QTableWidget* tableWidget);
+    void fillTableWithTopPostsComments(QTableWidget *table); // implementa este método
 };
 
 #endif // DOUBLYLIST_H

@@ -11,6 +11,7 @@
 #include <QScrollArea>
 #include <QVBoxLayout>
 #include <QLabel>
+#include <set>
 using namespace std;
 
 class Node
@@ -38,16 +39,21 @@ private:
     bool compareDates(string date1, string hour1, string date2, string hour2); // Nueva función para comparar fechas
     void preorder(Node *root);
     void deleteTree(Node* root);
-    void graph(Node *root, ofstream &content);
+    void graph(Node *root, ofstream &content, std::set<std::string> &uniqueDates, const std::string &highlightedDate);
 public:
     BST();
 
     void insert(Post value); // Ahora inserta un Post
     void preorder();
     void deleteTree();
-    void graph();
+    void graph(const std::string &highlightedDate);
     void fillScrollAreaWithPosts(QScrollArea *scrollArea);
     void fillScrollAreaWithPosts(Node *node, QVBoxLayout *layout);
+    void fillScrollAreaWithPosts(QScrollArea *scrollArea, string dateFilter);
+    void fillScrollAreaWithPosts(Node *node, QVBoxLayout *layout, string dateFilter);
+    void fillScrollAreaOrden(QScrollArea *scrollArea, string orden, int cantidad);
+    void fillScrollAreaOrden(Node *node, QVBoxLayout *layout, string orden, int &cantidad);
+    void procesarNodo(Node *node, QVBoxLayout *layout, int &cantidad);
     Node *search(Node* root, Post postToFind);
     void insertComment(Post postToFind, Comment commentToInsert);
     ~BST();

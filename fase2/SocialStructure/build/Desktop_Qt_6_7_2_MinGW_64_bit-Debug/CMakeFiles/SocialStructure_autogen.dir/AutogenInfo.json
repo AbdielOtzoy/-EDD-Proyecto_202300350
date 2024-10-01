@@ -347,6 +347,30 @@
 			null
 		],
 		[
+			"C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/matrix/matrix.h",
+			"MU",
+			"VGKBC7D3S7/moc_matrix.cpp",
+			null
+		],
+		[
+			"C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/matrix/matrixnode.h",
+			"MU",
+			"VGKBC7D3S7/moc_matrixnode.cpp",
+			null
+		],
+		[
+			"C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/simpleList/listnode.h",
+			"MU",
+			"EV6AP7J2SW/moc_listnode.cpp",
+			null
+		],
+		[
+			"C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/simpleList/simplelist.h",
+			"MU",
+			"EV6AP7J2SW/moc_simplelist.cpp",
+			null
+		],
+		[
 			"C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/stack.h",
 			"MU",
 			"2A4JJY5TAP/moc_stack.cpp",
@@ -513,6 +537,26 @@
 		],
 		[
 			"C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/list.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/matrix/matrix.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/matrix/matrixnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/simpleList/listnode.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/structures/matrix/simpleList/simplelist.cpp",
 			"MU",
 			null
 		],

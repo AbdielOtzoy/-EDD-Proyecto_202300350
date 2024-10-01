@@ -30,7 +30,7 @@ void MainWindow::on_pushButton_clicked()
 
 
     if(user != "" && password != "") {
-        if(user =="admin" && password == "admin") {
+        if(user =="admin@gmail.com" && password == "EDD2S2024") {
             qDebug() << "admin";
             AdminView *adminView= new AdminView();
             adminView->show();
@@ -69,16 +69,9 @@ void MainWindow::on_pushButton_clicked()
 
         }
     } else {
-        // QMessageBox::warning(this, "error","no pueden haber campos vacios");
+        QMessageBox::warning(this, "error","no pueden haber campos vacios");
 
-        // Usuario de prueba, eliminar en la versión final
-        User *usertest = new User("chepito", "choc", "01/09/2003", "chepe@gmail.com", "123");
-        appState->setUserLogged(usertest);
-        avlTree->agregar(*usertest);
 
-        userView *userview = new userView();
-        userview->show();
-        this->close();
 
     }
 }

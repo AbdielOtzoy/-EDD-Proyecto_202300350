@@ -1,0 +1,25 @@
+# ninja log v6
+9	1534	7492829466857705	SocialStructure_autogen/timestamp	2bb354ea7fc44b60
+9	1534	7492829466857705	SocialStructure_autogen/mocs_compilation.cpp	2bb354ea7fc44b60
+9	1534	7492829466857705	C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/build/Desktop_Qt_6_7_2_MinGW_64_bit-MinSizeRel/SocialStructure_autogen/timestamp	2bb354ea7fc44b60
+9	1534	7492829466857705	C:/Users/abdie/OneDrive/Escritorio/SS2024/EDD/[EDD]Proyecto_202300350/fase2/SocialStructure/build/Desktop_Qt_6_7_2_MinGW_64_bit-MinSizeRel/SocialStructure_autogen/mocs_compilation.cpp	2bb354ea7fc44b60
+1543	7436	7492829467749806	CMakeFiles/SocialStructure.dir/main.cpp.obj	8c7d5ab6c9a14f63
+1583	7477	7492829468154298	CMakeFiles/SocialStructure.dir/models/post.cpp.obj	c569e042792dd75b
+1564	7489	7492829467952979	CMakeFiles/SocialStructure.dir/user.cpp.obj	52b4300000695f04
+1572	7602	7492829468042767	CMakeFiles/SocialStructure.dir/structures/avl.cpp.obj	5d6e834c0e773bc3
+1546	8131	7492829467779712	CMakeFiles/SocialStructure.dir/mainwindow.cpp.obj	769937c76efdf98e
+1577	8217	7492829468084546	CMakeFiles/SocialStructure.dir/appstage.cpp.obj	68a78602c9b58bc0
+1559	9222	7492829467911348	CMakeFiles/SocialStructure.dir/adminview.cpp.obj	f2244f5eaa02b35a
+1550	9263	7492829467821656	CMakeFiles/SocialStructure.dir/register.cpp.obj	a1f13d9ea8408d6f
+1540	9445	7492829467719969	CMakeFiles/SocialStructure.dir/SocialStructure_autogen/mocs_compilation.cpp.obj	b12db35581d4a40
+1555	11920	7492829467861522	CMakeFiles/SocialStructure.dir/userview.cpp.obj	3bc44d9230959c24
+7602	12644	7492829528341028	CMakeFiles/SocialStructure.dir/models/request.cpp.obj	42bfe7d935cafa1b
+7489	13450	7492829527209481	CMakeFiles/SocialStructure.dir/structures/bst.cpp.obj	8e43ad54286fba38
+9222	13972	7492829544543187	CMakeFiles/SocialStructure.dir/structures/friendlist.cpp.obj	e0e7cfce64d0542d
+8132	14054	7492829533636507	CMakeFiles/SocialStructure.dir/structures/list.cpp.obj	a8fa62507e58dc9b
+9446	14260	7492829546781396	CMakeFiles/SocialStructure.dir/models/comment.cpp.obj	346c738acae826ef
+7477	14359	7492829527089889	CMakeFiles/SocialStructure.dir/postform.cpp.obj	46dfdd342112e287
+8217	15076	7492829534488878	CMakeFiles/SocialStructure.dir/structures/stack.cpp.obj	ea103c729a4938f
+7436	15363	7492829526676077	CMakeFiles/SocialStructure.dir/structures/doublylist.cpp.obj	b6a3dc072fdaa39d
+9263	15601	7492829544957050	CMakeFiles/SocialStructure.dir/commentform.cpp.obj	5baa83d73c7db7cf
+11920	16162	7492829571517638	CMakeFiles/SocialStructure.dir/structures/btree.cpp.obj	cd89908c8295213f

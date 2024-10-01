@@ -15,6 +15,11 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QWidget>
+#include <QPixmap>
+#include <QDir>
+#include <QDesktopServices>
+#include <QUrl>
+#include "mainwindow.h"
 
 userView::userView(QWidget *parent)
     : QWidget(parent)
@@ -69,12 +74,12 @@ void userView::on_tabWidget_currentChanged(int index)
         qDebug() << "cargando datos del perfil ... ";
         User *userlogged = appState->getUserLogged();
 
+        ui->nameInput->setPlainText(QString::fromStdString(userlogged->getName()));
+        ui->lastnameInput->setPlainText(QString::fromStdString(userlogged->getLastName()));
+        ui->emailLabel->setText(QString::fromStdString(userlogged->getEmail()));
+        ui->passwordInput->setPlainText(QString::fromStdString(userlogged->getPassword()));
+        ui->birthdateInput->setPlainText(QString::fromStdString(userlogged->getBirthDate()));
 
-        ui->name->setText("Nombres: " + QString::fromStdString(userlogged->getName()));
-        ui->lastname->setText("Apellidos: " + QString::fromStdString(userlogged->getLastName()));
-        ui->email->setText("Correo: " + QString::fromStdString(userlogged->getEmail()));
-        ui->password->setText("Contraseña: " + QString::fromStdString(userlogged->getPassword()));
-        ui->birthdate->setText("Fecha de nacimiento: " + QString::fromStdString(userlogged->getBirthDate()));
 
 
     }
@@ -89,7 +94,6 @@ void userView::on_tabWidget_currentChanged(int index)
         users->clear();
         users->setRowCount(0);
         users->setHorizontalHeaderLabels(QStringList() << "Nombres" << "Apellidos" << "Correo" << "Nacimiento" << "Enviar Solicitud");
-
 
 
         User *userlogged = appState->getUserLogged();
@@ -120,6 +124,20 @@ void userView::on_tabWidget_currentChanged(int index)
         // ver pos los amigos del usuario
         qDebug() << "los amigso del usuario logeado: ";
         userlogged->friends.printFriendList();
+
+    }
+    if(index == 2) { // reportes
+
+    QTableWidget *topPostDate = ui->topPostsDates;
+    QTableWidget *topPostComments = ui->topPostComments;
+
+    //lenar las publicaciones del usuario
+    DoublyList *posts = appState->getPosts(); // publicaciones en general
+
+    posts->fillTableWithTopDates(topPostDate);
+    posts->fillTableWithTopPostsComments(topPostComments);
+
+
 
     }
     if(index == 1) { // publicaciones
@@ -162,9 +180,6 @@ void userView::on_pushButton_2_clicked()
         AppState *appState = AppState::getInstance();
         Avl *avlTree = appState->getAvlTree();
 
-        User *usertest1 = new User("maria", "lopez", "12/05/1998", "maria.lopez@gmail.com", "password123");
-        avlTree->agregar(*usertest1);
-
         Nodo userFound = avlTree->buscar(email.toStdString());
         if(userFound != NULL) {
             ui->nameFound->setText("Nombres: " + QString::fromStdString(userFound->data.getName()));
@@ -176,5 +191,150 @@ void userView::on_pushButton_2_clicked()
         }
 
     }
+}
+
+
+void userView::on_pushButton_4_clicked()
+{
+    ui->dateFilter->setDisplayFormat("dd/MM/yyyy");
+    QString dateFilter = ui->dateFilter->text();
+    qDebug() << dateFilter;
+    AppState *appstate = AppState::getInstance();
+    //lenar las publicaciones del usuario
+    User *userlogged = appstate->getUserLogged();
+    DoublyList *posts = appstate->getPosts(); // publicaciones en general
+    BST *bst = new BST();
+
+    FriendList friends = userlogged->friends;
+
+    // filtrando las publicaciones
+    posts->fillBstPosts(friends, userlogged->getEmail(), *bst);
+
+    // mostrando las publicaciones en el scroll area
+    QScrollArea *feed = ui->feed;
+
+
+    bst->fillScrollAreaWithPosts(feed, dateFilter.toStdString());
+
+
+
+
+
+}
+
+
+void userView::on_pushButton_5_clicked()
+{
+    QString orden = ui->orden->currentText();
+    QString cantidadStd = ui->cantidad->toPlainText();
+    int cantidad = std::stoi(cantidadStd.toStdString());
+    qDebug() << orden;
+    qDebug() << cantidad;
+
+    AppState *appstate = AppState::getInstance();
+    //lenar las publicaciones del usuario
+    User *userlogged = appstate->getUserLogged();
+    DoublyList *posts = appstate->getPosts(); // publicaciones en general
+    BST *bst = new BST();
+
+    FriendList friends = userlogged->friends;
+
+    // filtrando las publicaciones
+    posts->fillBstPosts(friends, userlogged->getEmail(), *bst);
+
+    // mostrando las publicaciones en el scroll area
+    QScrollArea *feed = ui->feed;
+
+    bst->fillScrollAreaOrden(feed, orden.toStdString(), cantidad);
+
+
+}
+
+
+void userView::on_pushButton_9_clicked()
+{
+    ui->bstFilter->setDisplayFormat("dd/MM/yyyy");
+    QString datebst = ui->bstFilter->text();
+    qDebug ()<< datebst;
+
+    AppState *appstate = AppState::getInstance();
+    //lenar las publicaciones del usuario
+    User *userlogged = appstate->getUserLogged();
+    DoublyList *posts = appstate->getPosts(); // publicaciones en general
+    BST *bst = new BST();
+
+    FriendList friends = userlogged->friends;
+
+    // filtrando las publicaciones
+    posts->fillBstPosts(friends, userlogged->getEmail(), *bst);
+
+    bst->graph(datebst.toStdString());
+    qDebug() << "Graficando el arbol bst";
+
+    QLabel* imagelabel = ui->bstImage;
+
+    QString imagePath = QDir::currentPath() + "/bst.png";
+
+    qDebug() << imagePath;
+    // Cargar la imagen en un QPixmap
+    QPixmap image(imagePath);
+
+    // Verificar si la imagen se cargó correctamente
+    if (!image.isNull())
+    {
+        // Abrir la imagen con la aplicación predeterminada del sistema operativo
+        QDesktopServices::openUrl(QUrl::fromLocalFile(imagePath));
+    }
+    else
+    {
+        imagelabel->setText("No se pudo cargar la imagen.");  // Mostrar un mensaje si no se cargó la imagen
+    }
+
+
+}
+
+
+void userView::on_pushButton_7_clicked()
+{
+    AppState *appstate = AppState::getInstance();
+    User *userlogged = appstate->getUserLogged();
+    Avl *users = appstate->getAvlTree();
+
+    QString newName = ui->nameInput->toPlainText();
+    QString newLastname = ui->lastnameInput->toPlainText();
+    QString newPassword = ui->passwordInput->toPlainText();
+    QString newBirthdate = ui->birthdateInput->toPlainText();
+
+
+    User* updateUser = new User(newName.toStdString(), newLastname.toStdString(),newBirthdate.toStdString(),userlogged->getEmail(),newPassword.toStdString());
+
+    appstate->setUserLogged(updateUser);
+
+    // actualizar usuario buscado por email
+    users->buscarActualizar(userlogged->getEmail(), *updateUser);
+    QMessageBox::about(this, "Actualización", "Përfil actualizado correctamente");
+
+
+}
+
+
+void userView::on_pushButton_8_clicked()
+{
+    AppState *appstate = AppState::getInstance();
+    User *userlogged = appstate->getUserLogged();
+    Avl *users = appstate->getAvlTree();
+
+    users->eliminar(userlogged->getEmail());
+
+    userlogged->setName("");
+    userlogged->setLastName("");
+    userlogged->setEmail("");
+    userlogged->setBirthDate("");
+    userlogged->setPassword("");
+
+
+    MainWindow *mainw = new MainWindow();
+    mainw->show();
+    this->close();
 }
 

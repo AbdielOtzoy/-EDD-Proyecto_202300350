@@ -21,22 +21,23 @@ Post::Post(string author, string content, string date, string time)
     this->time = time;
 }
 
-string Post::getAuthor()
+// Asegúrate de que los métodos sean constantes
+string Post::getAuthor() const
 {
     return this->author;
 }
 
-string Post::getContent()
+string Post::getContent() const
 {
     return this->content;
 }
 
-string Post::getDate()
+string Post::getDate() const
 {
     return this->date;
 }
 
-string Post::getTime()
+string Post::getTime() const
 {
     return this->time;
 }

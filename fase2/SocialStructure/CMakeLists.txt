@@ -41,6 +41,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         commentform.h commentform.cpp commentform.ui
         models/comment.h models/comment.cpp
         structures/btree.h structures/btree.cpp
+        structures/matrix/matrix/matrixnode.h structures/matrix/matrix/matrixnode.cpp
+        structures/matrix/simpleList/listnode.h structures/matrix/simpleList/listnode.cpp
+        structures/matrix/simpleList/simplelist.h structures/matrix/simpleList/simplelist.cpp
+        structures/matrix/matrix/matrix.h structures/matrix/matrix/matrix.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET SocialStructure APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
